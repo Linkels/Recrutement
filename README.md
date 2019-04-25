@@ -1,2 +1,2 @@
 # Recrutement
-Projet d'entreprise
+Projet d'entreprise en groupe par Alain, Angelina, Emmanuel et Maxime
