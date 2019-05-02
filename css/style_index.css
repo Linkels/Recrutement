@@ -4,6 +4,44 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>mise en place de la grille*/
+
 #main {
-  background-image: url(logo/logo_grand_avec_polygone.png);
+  width: 100%;
+  min-height: 1000em;
+  background-image: url('logo/logo_grand_avec_polygone.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#gp_blocs {
+  margin: 2em;
+  display: grid;
+  grid-template-columns: 30% 20% 20% 30%;
+  grid-template-rows: repeat(6, 15em);
+  grid-gap: 2em;
+}
+
+#bloc_1 {
+  background-color: #da183b;
+  grid-column: 1 / span 1;
+  padding: 1em;
+  text-align: center;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>mise en place de la titraille*/
+
+.titre-bloc1 {
+  color: black;
+  padding-bottom: 0.5em;
+}
+
+.titre-inter-bloc1, .date-bloc1 {
+  color: white;
 }
