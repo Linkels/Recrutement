@@ -44,4 +44,15 @@ body {
 
 .titre-inter-bloc1, .date-bloc1 {
   color: white;
+  padding-bottom: 0.5em;
+  font-size: 1.3em;
+}
+
+#bloc_1 .deux {
+  padding-top: 1em;
+}
+
+#bloc_1 hr{
+  width: 20%;
+  border: 0.1em solid black;
 }
