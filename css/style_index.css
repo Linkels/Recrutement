@@ -38,21 +38,43 @@ body {
 
 #bloc_2 {
   grid-column: 2 / span 3;
-  padding: 1em;
-  padding-right: 2em;
+  padding: 1em 2em;
   border: 1px solid gray;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+#bloc_3 {
+  grid-area: 2 / 1 / 4 / 3;
+  padding: 1em;
+  border: 3px dotted black;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+#bloc_4 {
+  grid-column: 3 / span 2;
+  padding: 1em 2em;
+  border: 3px solid #da183b;
+  box-shadow: 5px 10px 8px #888888;
+  text-align: center;
+}
+
+#bloc_5 {
+  background-color: #da183b;
+  grid-column: 3 / span 2;
+  padding: 1em;
+  text-align: center;
   box-shadow: 5px 10px 8px #888888;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>mise en place de la titraille*/
 
-.titre-bloc1, .titre-bloc2 {
+.titre-bloc1, .titre-bloc2, .titre-bloc3, .titre-bloc4, .titre-bloc5 {
   color: black;
   padding-bottom: 0.5em;
 }
 
-.titre-inter-bloc1, .date-bloc1 {
+.titre-inter-bloc1, .date-bloc1, .titre-inter-bloc5, .info-bloc5 {
   color: white;
   padding-bottom: 0.5em;
   font-size: 1.3em;
@@ -62,11 +84,33 @@ body {
   padding-top: 1em;
 }
 
-#bloc_1 hr{
+#bloc_1 hr, #bloc_5 hr{
   width: 20%;
   border: 0.1em solid black;
 }
 
 #bloc_2 p {
-  padding-top: 1em;
+  padding-top: 0.5em;
+}
+
+#bloc_2 .message {
+  text-decoration: underline;
+}
+
+.titre-bloc3 {
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+.text-bloc4 {
+color: white;
+}
+
+.fond-noir {
+  background-color: black;
+  padding: 0.5em;
+}
+
+.info-bloc5 {
+  padding-bottom: 1em;
 }
