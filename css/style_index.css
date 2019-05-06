@@ -66,10 +66,33 @@ body {
   box-shadow: 5px 10px 8px #888888;
 }
 
+#bloc_6 {
+  grid-column: 1 / span 4;
+  padding: 1em;
+  border: 3px dashed black;
+  box-shadow: 5px 10px 8px #888888;
+  border-radius: 2em 0em 2em 0em;
+}
+
+#bloc_7 {
+  grid-column: 1 / span 3;
+  background-color: #da183b;
+  padding: 1em;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+#bloc_8 {
+  grid-column: 4 / span 1;
+  padding: 1em 2em;
+  border: 3px solid #da183b;
+  box-shadow: 5px 10px 8px #888888;
+  text-align: center;
+}
+
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>mise en place de la titraille*/
 
-.titre-bloc1, .titre-bloc2, .titre-bloc3, .titre-bloc4, .titre-bloc5 {
+.titre-bloc1, .titre-bloc2, .titre-bloc3, .titre-bloc4, .titre-bloc5, .titre-bloc6, .titre-bloc7 {
   color: black;
   padding-bottom: 0.5em;
 }
@@ -84,7 +107,7 @@ body {
   padding-top: 1em;
 }
 
-#bloc_1 hr, #bloc_5 hr{
+#bloc_1 hr, #bloc_5 hr, #bloc_7 hr {
   width: 20%;
   border: 0.1em solid black;
 }
@@ -102,7 +125,7 @@ body {
   padding-top: 0.5em;
 }
 
-.text-bloc4 {
+.text-bloc4, text-bloc7 {
 color: white;
 }
 
@@ -113,4 +136,36 @@ color: white;
 
 .info-bloc5 {
   padding-bottom: 1em;
+}
+
+.titre-bloc6 {
+  padding-left: 1em;
+}
+
+.list-gche {
+  position: relative;
+}
+
+.list-dte {
+  position: relative;
+  top: -5em;
+  left: 35em;
+}
+
+.titraille-bloc7 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.text-bloc7{
+  text-align: center;
+}
+
+#bloc_7 .un {
+  padding-top: 2em;
+}
+
+#bloc_7 a {
+  color: white;
 }
