@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style_form_cand_1.css">
+  <link rel="stylesheet" href="css/form_cand_1.css">
 </head>
 
 <body>
@@ -31,38 +31,65 @@
   </div>
 
   <form id="form" action="/formulaire_candidature.php" method="POST">
-    <fieldset>
-      <legend>Etat Civil*</legend>
-      <label>Prénom</label><br/>
-      <input type="text" name="prenom" maxlength="20" required>
-      <label>Nom</label><br/>
-      <input type="text" name="nom" maxlength="20" required>
-      <label>Date de naissance</label><br/>
-      <input type="date" name="date_naissance" value="jj/mm/aaaa" required>
-      <label>Adresse</label><br/>
-      <input type="text" name="adresse" value="jj/mm/aaaa" required>
-      <label>Code postal</label><br/>
-      <input type="number" name="code_postal" maxlength="5" required>
-      <label>Ville</label><br/>
-      <input type="text" name="ville" required>
-      <label>Nationalité</label><br/>
-      <input type="text" name="nationalité" required>
-      <label>Email</label><br/>
-      <input type="email" name="email" required>
-      <label>Numéro de téléphone où l'on peut vous joindre</label><br/>
-      <input type="number" name="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" value="xx-xx-xx-xx-xx" required>
-      <label>Vote statut actuel</label><br/>
-      <input type="list" name="statut" required>
-      <label>Quel est le dernier diplôme que vous ayez obtenu?</label><br/>
-      <input type="text" name="diplôme" required>
-      <label>Insérez ici votre photo</label><br/>
-      <input type="file" name="photo" required><br/>
-      <input type="submit" value="Valider cette photo">
+    <fieldset class="float-left">
+      <legend>Etat Civil<span class="clr">*</span></legend>
 
-      <button><a href="form_candidature_2.php">Passez aux questions suivantes"</a></button>
+        <label>Prénom</label><br/>
+        <input type="text" name="prenom" maxlength="20" required><br/>
+
+
+        <label>Nom</label><br/>
+        <input type="text" name="nom" maxlength="20" required><br/>
+
+
+        <label>Date de naissance</label><br/>
+        <input type="date" name="date_naissance" value="jj/mm/aaaa" required><br/>
+
+
+        <label>Adresse</label><br/>
+        <input type="text" name="adresse" required><br/>
+        <label>Code postal</label><br/>
+        <select name="code_postal" required><br/>
+          <option value="php">PHP</option>
+        </select><br/><br/>
+        <label>Ville</label><br/>
+        <input type="text" name="ville" disabled><br/>
+
+
+      <label>Nationalité</label><br/>
+      <select name="nationalité" required><br/>
+          <option value="php">PHP</option>
+      </select><br/><br/>
+
+      <label>Email</label><br/>
+      <input type="email" name="email" required><br/>
+      <label>Numéro de téléphone où l'on peut vous joindre</label><br/>
+      <input type="tel" name="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" value="xx-xx-xx-xx-xx" required><br/>
+    </fieldset>
+
+    <fieldset>
+      <legend>Votre statut<span class="clr">*</span></legend>
+
+      <label>Vote statut actuel</label><br/>
+      <select type="datalist" name="statut" required><br/>
+        <option value="php">PHP</option>
+      </select><br/><br/>
+
+      <label>Quel est le dernier diplôme que vous ayez obtenu?</label><br/>
+      <input type="text" name="diplôme" required><br/>
+
+        <label>Insérez ici votre photo</label><br/>
+        <input type="file" name="photo" required><br/>
+        <input type="submit" value="Valider cette photo"><br/><br/>
 
     </fieldset>
   </form>
+
+      <center><button><a href="form_candidature_2.php">Passez aux questions suivantes</a></button></center>
+
+      <p class="float-none"><span class="clr">* </span> Toutes les questions sont obligatoires, mais restent modifiables tant
+        que vous ne validez pas votre formulaire à la dernière étape.</p>
+        
     <!--pour inclure le footer-->
     <?php
 
