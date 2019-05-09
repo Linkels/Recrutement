@@ -9,6 +9,10 @@ body {
   overflow-x: hidden;
 }
 
+p {
+  font-size: 1.1em;
+}
+
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>mise en place de la grille*/
 
@@ -102,15 +106,17 @@ body {
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>>mise en place de la titraille de cq bloc*/
 
-.titre-bloc1, .titre-bloc2, .titre-bloc3, .titre-bloc4, .titre-bloc5, .titre-bloc6, .titre-bloc7 {
+.titre-bloc1, .titre-bloc2, .titre-bloc3, .titre-bloc4, .titre-bloc5, .titre-bloc6, .titre-bloc7, .titre-bloc8, .titre-bloc9 {
   color: black;
   padding-bottom: 0.5em;
+  font-size: 1.8em;
 }
 
 .titre-inter-bloc1, .date-bloc1, .titre-inter-bloc5, .info-bloc5 {
   color: white;
   padding-bottom: 0.5em;
   font-size: 1.3em;
+  font-weight: bold;
 }
 
 #bloc_1 .deux {
@@ -133,6 +139,10 @@ body {
 .titre-bloc3 {
   text-align: center;
   padding-top: 0.5em;
+}
+
+.text-bloc3, .text-bloc4 {
+  font-size: 1.2em;
 }
 
 .text-bloc4, .text-bloc8 {
