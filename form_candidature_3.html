@@ -39,7 +39,7 @@
   <div id="progress-bar">
     <div class="cercle etape-1">1</div>
     <div class="cercle etape-1">2</div>
-    <div class="cercle">3</div>
+    <div class="cercle etape-1">3</div>
     <div class="etape-d"><i class="far fa-check-circle fa-2x bgd"></i></div>
   </div>
 
@@ -47,27 +47,24 @@
 
   <form id="form" action="/formulaire_candidature.php" method="POST">
     <fieldset class="float-left">
-      <legend>Motivation <span class="clr">*</span></legend>
+      <legend>Pré-requis <span class="clr">*</span></legend>
 
-        <label>Si vous étiez un super-héros / une super-héroïne, qui seriez-vous et pourquoi?</label><br/>
-        <textarea name="heros" rows="7" cols="70" required></textarea><br/>
-
-
-        <label>Racontez-nous un de vos "hacks" (pas forcément technique ou informatique):</label><br/>
-        <textarea name="hack" rows="7" cols="70" required></textarea><br/>
+        <label>Pré-requis #1 : PHP - Lessons Sololearn (OBLIGATOIRE) / Déposer ci-dessous le lien de votre profil Sololearn :</label><br/>
+        <input type="text" name="php" maxlength="100" required><br/>
 
 
-        <label>Dites-nous pourquoi vous souhaitez intégrer la formation :</label><br/>
-        <textarea name="pourquoi" rows="7" cols="70" required></textarea><br/>
+        <label>Pré-requis #2 : HTML et CSS - Badges Codecademy (OBLIGATOIRE) / Déposer ici le lien de votre profil public Codecademy :</label><br/>
+        <input type="text" name="html/css" maxlength="100" required><br/>
 
 
-        <label>Racontez-nous votre parcours et détaillez-nous votre motivation en vous exprimant avec votre style,
-        mais ne vous limitez pas à un texte tapé à la va_vite. Aussi, n'hésitez pas à faire une vidéo, un site
-        ou toute autre chose qui démontrera votre envie, votre motivation et vos compétences!</label><br/>
-        <textarea name="parcours" rows="7" cols="70" required></textarea><br/>
+        <label>Si vous avez des profils supplémentaires sur d'autres plate-formes  similaires, comme Openclassrooms ou Codeschool, copiez ici le(s) lien(s) vers ce(s) profil(s) public(s) (FACULTATIF)</label><br/>
+        <input type="text" name="autres profils"><br/>
 
-        <label>Dans un an, avec vos nouveaux superpouvoirs de code informatique, que souhaiteriez-vous faire dans votre vie?</label><br/>
-        <textarea name="futur" rows="7" cols="70" required></textarea><br/>
+
+        <label>Quel est votre niveau d'anglais (lu / écrit)? Pas  de panique, cette question est posée à titre indicatif</label><br/>
+        <select type="datalist" name="anglais" required><br/>
+          <option value="php">PHP</option>
+        </select><br/><br/>
 
     </fieldset>
 
