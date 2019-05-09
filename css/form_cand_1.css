@@ -101,6 +101,10 @@ input[name="photo"] {
   border: none;
 }
 
+textarea {
+  margin: 1em;
+}
+
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<mise en place des boutons*/
 
