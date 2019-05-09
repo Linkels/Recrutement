@@ -1,0 +1,115 @@
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+/* NavBar */
+
+header{
+    display: block;
+    width: 100%;
+    height: 8.7rem;
+    background-size: cover;
+    background-color: #000;
+
+        font-size: 10px;
+        font-family: "Roboto DC", sans-serif;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav{
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.logo{
+    width: 15rem;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    list-style: none;
+    padding: 1rem;
+}
+
+nav ul li a{
+    font-weight: bold;
+    margin: 0 1rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+nav ul li a:hover{
+    color: crimson;
+}
+
+.button{
+    background: #ee144f;
+    padding: 9px 5px;
+    border-radius: 1rem;
+}
+
+.button:hover{
+    background-color: #fff;
+}
+
+/* End NavBar */
+
+
+
+
+/* Boucle qui tourne */
+
+.boucle{
+    display:none;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 5000;
+    background-color: #fff;
+}
+
+.boucle img{
+    height: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 39vh;
+    margin: auto;
+    animation: tourne 1s infinite;
+}
+
+/* Boucle qui tourne */
+
+
+
+
+
+
+/* Keyframes */
+
+@keyframes tourne{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(720deg);
+    }
+}
+
+/* Keyframes */
+
+
+/* Responsive */
