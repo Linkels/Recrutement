@@ -15,17 +15,32 @@
   <!--pour la police Roboto-->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
+  <!--  pour le css natif -->
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/form_cand_1.css">
+
 </head>
 
 <body>
-  <!--pour inclure le header-->
+  <!--pour inclure le header
   <?php
 
   include 'header.php';
 
-  ?>
-
+  ?>-->
+  <header>
+    <div class="container">
+        <nav>
+            <div class="img-banner">
+                <a href="index.html"><img class="logo" src="logo/scm_logo.png"></a>
+            </div>
+            <ul>
+                <li class="button"><a href="#">Mon compte</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
   <!--  Titre encadré -->
 
   <div id="titre">
@@ -82,6 +97,50 @@
     include 'footer.php';
 
     ?>
+
+    <footer class="page-footer">
+
+      <div class="container-foot">
+            <div class="row">
+                <figure class="img-foot">
+                    <center><img src="logo/scm_logo_rond_lg.png" alt="logo" /></center>
+                    <figcaption>"In Code We Trust"</figcaption>
+                </figure>
+
+        <div class="column1">
+            <h5 class="title-foot">Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Link 1</a></li>
+
+                    <li><a href="#">Link 2</a></li>
+
+                    <li><a href="#">Link 3</a></li>
+
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+        </div>
+
+        <div class="column2">
+            <h5 class="title-foot">Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Link 1</a></li>
+
+                    <li><a href="#">Link 2</a></li>
+
+                    <li><a href="#">Link 3</a></li>
+
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+        </div>
+      </div>
+    </div>
+
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>© 2018 Copyright:<a> Simplon </a></p>
+        </div>
+        <!-- Copyright -->
+  </footer>
 
 
   <script src="js/main.js"></script>
