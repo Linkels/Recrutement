@@ -1,11 +1,14 @@
 <?php
-try
+try   {
+  $user = "angie";
+  $pass = "wachtwoord";
+  // Je me connecte à ma bdd
+  $bdd = new PDO('mysql:host=localhost;dbname=Recrutement;charset=utf8', $user, $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+  return $bdd;
+}catch(Exception $e)
 {
-   $conn = new PDO('mysql:host=localhost;dbname=Recrutement', 'angie', 'wachtwoord');
+  // En cas d'erreur, un message s'affiche et tout s'arrête
+        die('Erreur : '.$e->getMessage());
 }
-catch(Exception $e)
-{
-    echo 'Erreur : '.$e->getMessage().'<br />';
-    echo 'N° : '.$e->getCode().'<br />';
-}
+
 ?>

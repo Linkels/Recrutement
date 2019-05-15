@@ -51,7 +51,7 @@
 
   <form id="form" action="/formulaire_candidature.php" method="POST">
     <fieldset class="float-left">
-      <legend>Pré-requis <span class="clr">*</span></legend>
+      <legend> Pré-requis <span class="clr">*</span></legend>
 
         <label>Pré-requis #1 : PHP - Lessons Sololearn (OBLIGATOIRE) / Déposer ci-dessous le lien de votre profil Sololearn :</label><br/>
         <input type="text" name="php" maxlength="100" required><br/>

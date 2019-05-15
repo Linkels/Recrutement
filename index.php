@@ -24,20 +24,12 @@
   include 'header.php';
 
 
-  include 'connectbdd.php';
+  include 'connectBDD.php';
 
-    $sql = "SELECT * FROM infos-promo";
-    foreach ($conn->query($sql) as $row){
-      echo $row['nompromo'];
-      echo $row['datecandidature'];
-      echo $row['datedebutpromo'];
-      echo $row['datefinpromo'];
-
+    $sql = "SELECT * FROM infospromo";
+    foreach ($bdd->query($sql) as $row){
 }
-
-
-
-   ?>
+  ?>
 
 <!--début du contenu "main"-->
   <div id="main">
@@ -48,27 +40,27 @@
         <!--pour le premier bloc rouge à gauche-->
         <div id="bloc_1" class="animated zoomInLeft">
             <h1 class="titre-bloc1">
-              Promo 1.3
+              Promo <?= $row['nompromo'];?>
             </h1>
             <h3 class="titre-inter-bloc1">
               Date ultime pour candidater:
             </h3>
             <h4 class="date-bloc1">
-              11/11/1111
+              <?= ($row['datecandidature']) ;?>
             </h4>
             <center><hr/></center>
             <h3 class="titre-inter-bloc1 deux">
-              Date de la formation 1.3:
+              Date de la formation <?= $row['nompromo'];?>:
             </h3>
             <h4 class="date-bloc1">
-              Du 22/22/2222 au 33/33/3333
+              Du <?= $row['datedebutpromo'];?> au <?= $row['datefinpromo'];?>
             </h4>
         </div>
 
         <!-- pour le deuxième bloc blanc à droite-->
         <div id="bloc_2" class="animated fadeInRight">
           <h1 class="titre-bloc2">
-            Bienvenue au formulaire pour poser votre candidature à la promo 1.3
+            Bienvenue au formulaire pour poser votre candidature à la promo <?= $row['nompromo'];?>
           </h1>
           <p class="text-bloc2">Vous vous apprêtez à candidater à la formation Développeur·se Web
             de Simplon Charleville-Mézières - labellisée Grande Ecole du Numérique - qui se déroulera
@@ -228,6 +220,10 @@
       </p>
     </div>
 </div>
+
+<?php
+  $bdd=null;
+?>
 <!--  pour le bouton de candidature  -->
 
   <button class="btn-candidat"><a href="form_candidature_1.php"> Je candidate ! <a></button>
