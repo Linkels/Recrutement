@@ -23,7 +23,21 @@
 
   include 'header.php';
 
-  ?>
+
+  include 'connectbdd.php';
+
+    $sql = "SELECT * FROM infos-promo";
+    foreach ($conn->query($sql) as $row){
+      echo $row['nompromo'];
+      echo $row['datecandidature'];
+      echo $row['datedebutpromo'];
+      echo $row['datefinpromo'];
+
+}
+
+
+
+   ?>
 
 <!--début du contenu "main"-->
   <div id="main">

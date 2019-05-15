@@ -18,15 +18,31 @@
 </head>
 
 <body>
-  <!--pour inclure le header-->
+  <!--pour inclure le header
   <?php
 
   include 'header.php';
 
-  ?>
+  ?>-->
 
-<!--début du contenu "main"-->
+  <!--début du contenu "main"-->
   <div id="main">
+  <header>
+             <div class="container">
+                 <nav>
+                     <div class="img-banner">
+                         <a href="index.html"><img class="logo" src="logo/scm_logo.png"></a>
+                     </div>
+                     <ul>
+                         <li><a href="#">Nos Formations</a></li>
+                         <li><a href="#">Candidatures</a></li>
+                         <li><a href="#">Nous rejoindre</a></li>
+                         <li class="button"><a href="#">Mon compte</a></li>
+                     </ul>
+                 </nav>
+             </div>
+  </header>
+
 
     <!--pour l'ensemble des blocs-->
       <div id="gp_blocs">
@@ -217,15 +233,61 @@
 <!--  pour le bouton de candidature  -->
 
   <button class="btn-candidat"><a href="form_candidature_1.php"> Je candidate ! <a></button>
+</div>
+
+<!--pour le footer -->
+
+    <footer class="page-footer">
+
+      <div class="container-foot">
+            <div class="row">
+                <figure class="img-foot">
+                    <center><img src="logo/scm_logo_rond_lg.png" alt="logo" /></center>
+                    <figcaption>"In Code We Trust"</figcaption>
+                </figure>
+
+        <div class="column1">
+            <h5 class="title-foot">Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Link 1</a></li>
+
+                    <li><a href="#">Link 2</a></li>
+
+                    <li><a href="#">Link 3</a></li>
+
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+        </div>
+
+        <div class="column2">
+            <h5 class="title-foot">Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Link 1</a></li>
+
+                    <li><a href="#">Link 2</a></li>
+
+                    <li><a href="#">Link 3</a></li>
+
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+        </div>
+      </div>
+    </div>
+
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>© 2018 Copyright:<a> Simplon </a></p>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
 
-
-  <!--pour inclure le footer-->
+  <!--pour inclure le footer
   <?php
 
   include 'footer.php';
 
-  ?>
+  ?>-->
 
   <script src="js/main.js"></script>
 </body>

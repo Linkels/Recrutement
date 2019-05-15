@@ -5,6 +5,7 @@
 .page-footer {
     background: #000;
     height: 260px;
+    clear: both;
 }
 
 .container-foot {

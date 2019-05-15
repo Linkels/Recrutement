@@ -27,6 +27,11 @@
 
   include 'header.php';
 
+
+
+
+
+
   ?>
 
   <!--  Titre encadré -->
@@ -34,6 +39,7 @@
   <div id="titre">
     <h1>Bienvenue au formulaire de candidature à la promo 1.3 de SIMPL<span class="clr">O</span>N Charleville-Mézières - 2
     </h1>
+
   </div>
 
 <!--  Barre de progression -->
