@@ -28,19 +28,23 @@
   include 'header.php';
 
 
+  include 'connectBDD.php';
 
-
-
-
+    $sql = "SELECT * FROM infospromo";
+    foreach ($bdd->query($sql) as $row){
+}
   ?>
 
-  <!--  Titre encadré -->
+  <!---titre---->
 
   <div id="titre">
-    <h1>Bienvenue au formulaire de candidature à la promo 1.3 de SIMPL<span class="clr">O</span>N Charleville-Mézières - 2
+    <h1>Bienvenue au formulaire de candidature à la promo <?= $row['nompromo'];?> de SIMPL<span class="clr">O</span>N Charleville-Mézières
     </h1>
-
   </div>
+
+  <?php
+    $bdd=null;
+  ?>
 
 <!--  Barre de progression -->
 

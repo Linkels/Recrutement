@@ -27,12 +27,26 @@
 
   include 'header.php';
 
+
+  include 'connectBDD.php';
+
+    $sql = "SELECT * FROM infospromo";
+    foreach ($bdd->query($sql) as $row){
+}
   ?>
 
+  <!---titre---->
+
   <div id="titre">
-    <h1>Bienvenue au formulaire de candidature à la promo 1.3 de SIMPL<span class="clr">O</span>N Charleville-Mézières
+    <h1>Bienvenue au formulaire de candidature à la promo <?= $row['nompromo'];?> de SIMPL<span class="clr">O</span>N Charleville-Mézières
     </h1>
   </div>
+
+  <?php
+    $bdd=null;
+  ?>
+
+  <!---time-line---->
 
   <center><hr class="ligne-prog"></center>
   <div id="progress-bar">
@@ -41,6 +55,8 @@
     <div class="cercle">3</div>
     <div class="etape-d"><i class="far fa-check-circle fa-2x bgd"></i></div>
   </div>
+
+  <!---formulaire---->
 
   <form id="form" action="/formulaire_candidature.php" method="POST">
     <fieldset class="float-left">
@@ -103,6 +119,9 @@
 
       <p class="float-none"><span class="clr">* </span> Toutes les questions sont obligatoires, mais restent modifiables tant
         que vous ne validez pas votre formulaire à la dernière étape.</p>
+
+
+
 
     <!--pour inclure le footer-->
     <?php

@@ -46,14 +46,25 @@
               Date ultime pour candidater:
             </h3>
             <h4 class="date-bloc1">
-              <?= ($row['datecandidature']) ;?>
+              <?php
+                $newDate = date("d/m/Y", strtotime($row['datecandidature']));
+                echo $newDate;
+              ?>
             </h4>
             <center><hr/></center>
             <h3 class="titre-inter-bloc1 deux">
-              Date de la formation <?= $row['nompromo'];?>:
+              Date de la formation:
             </h3>
             <h4 class="date-bloc1">
-              Du <?= $row['datedebutpromo'];?> au <?= $row['datefinpromo'];?>
+              Du
+              <?php
+                $newDate = date("d/m/Y", strtotime($row['datedebutpromo']));
+                echo $newDate;
+              ?> au
+              <?php
+                $newDate = date("d/m/Y", strtotime($row['datefinpromo']));
+                echo $newDate;
+              ?>
             </h4>
         </div>
 
