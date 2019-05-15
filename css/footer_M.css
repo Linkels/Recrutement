@@ -1,0 +1,98 @@
+html, body {
+    font-size: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Footer */
+
+.page-footer{  bottom: 0;
+  background: #000;
+  margin: 0;
+  padding: 0;
+  height: 260px;
+  margin-top: auto;
+  font-size: 10px;
+  font-family: "Roboto DC", sans-serif;
+}
+
+.container-foot{
+    width: 70%;
+    height: 200px;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-foot img{
+    display: table-row;
+    width: 105px;
+    padding: 2.9rem 0;
+}
+
+.img-foot p{
+    color: #fff;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.column1 {
+    display: table-row;
+    color: #fff;
+    font-weight: lighter;
+    padding: 0 0;
+}
+
+.column2{
+    display: table-row;
+    color: #fff;
+    font-weight: lighter;
+    padding: 0 0;
+}
+
+.title-foot{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-bottom: 10px
+}
+
+.list-unstyled > li {
+    list-style: none;
+    padding-top: 10px;
+}
+
+.list-unstyled {
+      padding-left: 0px;
+}
+
+.list-unstyled a {
+    color: #fff;
+    font-size: 15px;
+}
+
+.footer-copyright {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    padding: 3rem;
+    background: #333;
+}
+
+.footer-copyright a {
+    color: crimson;
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer */
