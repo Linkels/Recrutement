@@ -1,17 +1,22 @@
 <?php
 
-include ('bdd_connect.php');
+include ('connectBDD.php');
 
-$nom= $_POST['nom'];
-$prenom = $_POST['prenom'];
-$mail = $_POST['email'];
-$identifiant = $_POST['ulogin'];
-$passwd = $_POST['psw1'];
-$passwd_hash = PASSWORD_HASH($_POST['psw1'], PASSWORD_DEFAULT);
+$prenom = $_POST["prenom"];
+$nom = $_POST["nom"];
+$date_naissance = $_POST["date_naissance"];
+$adresse = $_POST["adresse"];
+$code_postal = $_POST["code_postal"];
+$ville = $_POST["ville"];
+$nationalite = $_POST["nationalite"];
+$email = $_POST["email"];
+$tel = $_POST["tel"];
+$statut = $_POST["statut"];
+$diplome = $_POST["diplome"];
+$photo = $_POST["photo"];
 
 
-
-$sql = ("INSERT INTO utilisateur (nom, prenom, mail, ulogin, motdepasse, motdepassec) VALUES ('".$nom."', '".$prenom."', '".$mail."', '".$identifiant."', '".$passwd."', '".$passwd_hash."')");
+$sql = ("INSERT INTO etudiant (idhor, nom, prenom, datenai, adresse_perso, codep, nationalite, email, numetelp, numtels, superheros, hacks, intformat, motivation, dansunan, prerequis1, prerequis2, profilsuppl, langlais, lastdipl, disponib, situactu) VALUES ('1', 'LPPLO', '', '2019-05-06', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 $stmt= $conn->prepare($sql);
 
 $stmt->execute([$nom, $prenom, $mail, $identifiant, $passwd, $passwd_hash]);
