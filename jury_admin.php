@@ -12,7 +12,7 @@
   <?php include "header.php" ?>
 
 <center><h1>CANDIDAT 1 - JURY ADMIN</h1></center>
-  <div>
+  <div class="flex">
   <div id="bloc_1" class="animated zoomInLeft">
     <h1 class="titre-bloc1">
       <img src="img\logo.png" alt="">
