@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <?php include "header.php" ?>
 
   <center>
     <h1>CANDIDAT 1 - JURY ADMIN</h1>
@@ -68,7 +67,6 @@
 
 
 
-  <?php include "footer.php" ?>
 </body>
 
 </html>
