@@ -1,5 +1,7 @@
 <?php
 
+
+
 include ('connectBDD.php');
 
 $prenom = $_POST["prenom"];
@@ -16,15 +18,11 @@ $diplome = $_POST["diplome"];
 $photo = $_POST["photo"];
 
 
-$sql = ("INSERT INTO etudiant (idhor, nom, prenom, datenai, adresse_perso, codep, nationalite, email, numetelp, numtels, superheros, hacks, intformat, motivation, dansunan, prerequis1, prerequis2, profilsuppl, langlais, lastdipl, disponib, situactu) VALUES ('1', 'LPPLO', '', '2019-05-06', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
-$stmt= $conn->prepare($sql);
+$sql = ("INSERT INTO etudiant (prenom, nom, datenai, adresse_perso, codep, ville, nationalite, email, numtels, profilsuppl, lastdipl, liphoto)
+VALUES ('$prenom', '$nom', '$date_naissance', '$adresse', '$code_postal', '$ville', '$nationalite', '$email', '$tel', '$statut', '$diplome', '$photo')");
+$stmt= $bdd->prepare($sql);
 
-$stmt->execute([$nom, $prenom, $mail, $identifiant, $passwd, $passwd_hash]);
+$stmt->execute();
 
-if($stmt){
-    echo "Utilisateur ajouté !";
-}else{
-    echo "PAS ajouté!";
-}
-
+header('location:form_candidature_2.php')
 ?>

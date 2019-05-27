@@ -106,6 +106,7 @@ input[name="photo"] {
   border: none;
 }
 
+
 textarea {
   margin: 1em;
 }
@@ -118,12 +119,13 @@ textarea {
 >>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<mise en place des boutons*/
 
 input[type="submit"] {
-  width: 10em;
+  width: 20em;
   background-color: #da183b;
   color: white;
-  font-size: 0.7em;
+  font-size: 1em;
   font-weight: bold;
   border-radius: 0.7em;
+  margin-top: 1em;
 }
 
 button {

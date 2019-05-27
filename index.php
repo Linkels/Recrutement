@@ -237,7 +237,11 @@
 ?>
 <!--  pour le bouton de candidature  -->
 
-  <button class="btn-candidat"><a href="form_candidature_1.php"> Je candidate ! <a></button>
+<div class="btn-flex">
+  <button class="btn-candidat">
+    <a href="form_candidature_1.php"> Je candidate ! </a>
+  </button>
+</div>
 
 
 
