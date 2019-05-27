@@ -69,8 +69,8 @@ hr {
 /*//////////////////////////pour le formulaire\\\\\\\\\\\\\\\\\\\\*/
 
 fieldset {
-  margin: 1em;
-  padding: 1em 3em;
+  margin: 1em auto;
+  padding: 1em 8em;
   border: 3px solid black;
 }
 
@@ -80,6 +80,7 @@ fieldset {
 
 legend {
   font-size: 1.5em;
+  text-align: left;
 }
 
 input {
@@ -91,32 +92,40 @@ input {
   margin-right: 3em;
 }
 
-label {
-  padding-top: 0.5em;
+.radio {
+  width: 1em;
+  height: 1em;
+  margin: 0.5em;
 }
 
-.float-left {
-  float: left;
+label {
+  padding-top: 0.5em;
 }
 
 input[name="photo"] {
   border: none;
 }
 
+
 textarea {
   margin: 1em;
+}
+
+.error {
+  color: #FF0000;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<mise en place des boutons*/
 
 input[type="submit"] {
-  width: 10em;
+  width: 20em;
   background-color: #da183b;
   color: white;
-  font-size: 0.7em;
+  font-size: 1em;
   font-weight: bold;
   border-radius: 0.7em;
+  margin-top: 1em;
 }
 
 button {
