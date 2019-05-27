@@ -12,6 +12,7 @@ margin: 0;
 }
 
 #bloc_1 {
+  width: 600px;
   background-color: white;
   padding: 1em;
   text-align: center;
