@@ -1,47 +1,37 @@
-html, body {
-    font-size: 10px;
-}
-
-a{
-    text-decoration: none;
-    color: #000;
-}
-
-
-
 /* Footer */
 
-.page-footer{  bottom: 0;
-  background: #000;
-  margin: 0;
-  padding: 0;
-  height: 260px;
-  margin-top: auto;
-  font-size: 10px;
-  font-family: "Roboto DC", sans-serif;
+.page-footer {
+    background: #000;
+    height: 260px;
+    clear: both;
 }
 
-.container-foot{
+.container-foot {
     width: 70%;
     height: 200px;
     margin: auto;
 }
 
-.row{
+.row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.img-foot img{
+figure {
     display: table-row;
-    width: 105px;
-    padding: 2.9rem 0;
+    width: 150px;
+    padding:
 }
 
-.img-foot p{
+img {
+    padding: 2em 2em 1em 2em;
+}
+
+figcaption {
     color: #fff;
     font-size: 15px;
     font-weight: lighter;
+    padding-left: 1.5em;
 }
 
 .column1 {
@@ -51,14 +41,14 @@ a{
     padding: 2.9rem 0;
 }
 
-.column2{
+.column2 {
     display: table-row;
     color: #fff;
     font-weight: lighter;
     padding: 2.9rem 0;
 }
 
-.title-foot{
+.title-foot {
     font-size: 20px;
     text-transform: uppercase;
     font-weight: lighter;
@@ -67,6 +57,7 @@ a{
 .list-unstyled > li {
     list-style: none;
     padding-top: 10px;
+    text-align: center;
 }
 
 .list-unstyled a {
@@ -78,14 +69,13 @@ a{
     color: #fff;
     text-align: center;
     font-size: 15px;
-    padding: 3rem;
+    padding: 2em;
     background: #333;
+    margin-top: 1em;
 }
 
 .footer-copyright a {
     color: crimson;
-    margin: 0;
-    padding: 0;
 }
 
 /* Footer */

@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel="stylesheet" href="css/jury_tech.css">
-  <title>JURY ADMIN</title>
+  <title>JURY MOTIVATION</title>
 </head>
 
 <body>
   <?php include "header.php" ?>
 
   <center>
-    <h1>CANDIDAT 1 - JURY ADMIN</h1>
+    <h1>CANDIDAT 1 - JURY MOTIVATION</h1>
   </center>
   <div>
     <div id="bloc_1" class="animated zoomInLeft">
@@ -34,6 +34,23 @@
           <li>Dernier diplôme obtenu :</li>
           <li>Disponibilité :</li>
           <li>Statut :</li>
+        </ul>
+      </h3>
+    </div>
+    <div id="bloc_1" class="animated zoomInLeft">
+      <h1 class="titre-bloc1">
+
+      </h1>
+      <center>
+        <hr />
+      </center>
+      <h3 class="titre-inter-bloc1">
+        <ul>
+          <li>Réponse super héro : :</li>
+          <li>Réponse "hacks" :</li>
+          <li>Raison d'intégrer Simplon :</li>
+          <li>Parcours et motivation :</li>
+          <li>Vision dans un an :</li>
         </ul>
       </h3>
     </div>

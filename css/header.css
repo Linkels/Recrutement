@@ -1,24 +1,14 @@
-a{
-    text-decoration: none;
-    color: #000;
-}
-
-
-
 /* NavBar */
 
-header{
+header {
     display: block;
     width: 100%;
     height: 8.7rem;
     background-size: cover;
     background-color: #000;
-
-        font-size: 10px;
-        font-family: "Roboto DC", sans-serif;
 }
 
-.container{
+header .container{
     width: 90%;
     margin: 0 auto;
 }
@@ -31,7 +21,7 @@ nav{
     font-size: 1.4rem;
 }
 
-.logo{
+header .logo{
     width: 15rem;
 }
 
@@ -49,19 +39,20 @@ nav ul li a{
     margin: 0 1rem;
     letter-spacing: 1px;
     color: #fff;
+    text-decoration: none;
 }
 
 nav ul li a:hover{
     color: crimson;
 }
 
-.button{
+header .button{
     background: #ee144f;
     padding: 9px 5px;
     border-radius: 1rem;
 }
 
-.button:hover{
+header .button:hover{
     background-color: #fff;
 }
 
@@ -72,7 +63,7 @@ nav ul li a:hover{
 
 /* Boucle qui tourne */
 
-.boucle{
+header .boucle{
     display:none;
     top: 0;
     position: absolute;
@@ -81,7 +72,7 @@ nav ul li a:hover{
     background-color: #fff;
 }
 
-.boucle img{
+header .boucle img{
     height: 100px;
     position: absolute;
     left: 0;

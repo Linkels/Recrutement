@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel="stylesheet" href="css/jury_tech.css">
-  <title></title>
+  <title>JURY TECH</title>
 </head>
 
 <body>
   <?php include "header.php" ?>
 
   <center>
-    <h1>CANDIDAT 1 - JURY ADMIN</h1>
+    <h1>CANDIDAT 1 - JURY TECH</h1>
   </center>
   <div>
     <div id="bloc_1" class="animated zoomInLeft">
@@ -39,7 +39,7 @@
     </div>
     <div id="bloc_1" class="animated zoomInLeft">
       <h1 class="titre-bloc1">
-        
+
       </h1>
       <center>
         <hr />

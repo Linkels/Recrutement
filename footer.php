@@ -1,68 +1,43 @@
-        <link rel="stylesheet" href="css/footer_M.css" />
-        <footer class="page-footer">
+<footer class="page-footer">
 
+  <div class="container-foot">
+        <div class="row">
+            <figure class="img-foot">
+                <center><img src="logo/scm_logo_rond_lg.png" alt="logo" /></center>
+                <figcaption>"In Code We Trust"</figcaption>
+            </figure>
 
-            <div class="container-foot">
+    <div class="column1">
+        <h5 class="title-foot">Links</h5>
+            <ul class="list-unstyled">
+                <li><a href="#">Link 1</a></li>
 
-                <div class="row">
+                <li><a href="#">Link 2</a></li>
 
-                    <div class="img-foot">
+                <li><a href="#">Link 3</a></li>
 
-                        <img src="img/mea-avengers-endgame-v3.png" alt="" />
-                        <p>"In Code We Trust"</p>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+    </div>
 
-                    </div>
+    <div class="column2">
+        <h5 class="title-foot">Links</h5>
+            <ul class="list-unstyled">
+                <li><a href="#">Link 1</a></li>
 
-                    <div class="column1">
+                <li><a href="#">Link 2</a></li>
 
-                        <h5 class="title-foot">Links</h5>
+                <li><a href="#">Link 3</a></li>
 
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 4</a>
-                            </li>
-                        </ul>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
 
-                    </div>
-
-                    <div class="column2">
-
-                        <h5 class="title-foot">Links</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 4</a>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Copyright -->
-            <div class="footer-copyright">
-                <p>© 2018 Copyright:<a>Simplon</a></p>
-            </div>
-            <!-- Copyright -->
-
-        </footer>
+    <!-- Copyright -->
+    <div class="footer-copyright">
+        <p>© 2018 Copyright:<a> Simplon </a></p>
+    </div>
+    <!-- Copyright -->
+</footer>
