@@ -12,32 +12,43 @@
 <body>
   <?php include "header.php" ?>
 
+  <?php
+  $bdd = new PDO('mysql:host=localhost;dbname=recrutement;charset=utf8', 'root', '');
+  $requete = "SELECT * FROM etudiant WHERE idhor=" . $_GET["id"];
+  $reponse = $bdd->query($requete);
+  while ($donnees = $reponse->fetch())
+  {
+  ?>
+
+
+
   <center>
-    <h1>CANDIDAT 1 - JURY MOTIVATION</h1>
+    <h1>CANDIDAT <?php echo $donnees["idhor"]; ?> - JURY MOTIVATION</h1>
   </center>
   <div>
     <div id="bloc_1" class="animated zoomInLeft">
       <h1 class="titre-bloc1">
-        <img src="img\logo.png" alt="">
+        <img src="img/<?php echo $donnees["liphoto"]; ?>" alt="">
       </h1>
       <center>
         <hr />
       </center>
       <h3 class="titre-inter-bloc1">
         <ul>
-          <li>Nom :</li>
-          <li>Prénom :</li>
-          <li>Date de naissance :</li>
-          <li>Adresse :</li>
-          <li>Nationalité :</li>
-          <li>Email :</li>
-          <li>N° de téléphone :</li>
-          <li>Dernier diplôme obtenu :</li>
-          <li>Disponibilité :</li>
-          <li>Statut :</li>
+          <li>Nom : <?php echo $donnees["nom"]; ?></li>
+          <li>Prénom : <?php echo $donnees["prenom"]; ?></li>
+          <li>Date de naissance : <?php echo $donnees["datenai"]; ?></li>
+          <li>Adresse : <?php echo $donnees["adresse_perso"]; ?></li>
+          <li>Nationalité : <?php echo $donnees["nationalite"]; ?></li>
+          <li>Email : <?php echo $donnees["email"]; ?></li>
+          <li>N° de téléphone : <?php echo $donnees["numtels"]; ?></li>
+          <li>Dernier diplôme obtenu : <?php echo $donnees["lastdipl"]; ?></li>
+          <li>Disponibilité : <?php echo $donnees["disponib"]; ?></li>
+          <li>Statut : <?php echo $donnees["situactu"]; ?></li>
         </ul>
       </h3>
     </div>
+
     <div id="bloc_1" class="animated zoomInLeft">
       <h1 class="titre-bloc1">
 
@@ -47,15 +58,14 @@
       </center>
       <h3 class="titre-inter-bloc1">
         <ul>
-          <li>Réponse super héro : :</li>
-          <li>Réponse "hacks" :</li>
-          <li>Raison d'intégrer Simplon :</li>
-          <li>Parcours et motivation :</li>
-          <li>Vision dans un an :</li>
+          <li>Réponse super héro : <?php echo $donnees["superheros"]; ?></li>
+          <li>Réponse "hacks" : <?php echo $donnees["hacks"]; ?></li>
+          <li>Raison d'intégrer Simplon : <?php echo $donnees["intformat"]; ?></li>
+          <li>Parcours et motivation : <?php echo $donnees["motivation"]; ?></li>
+          <li>Vision dans un an : <?php echo $donnees["dansunan"]; ?></li>
         </ul>
       </h3>
     </div>
-
     <div id="bloc_1" class="animated zoomInLeft">
       <h1 class="titre-bloc1">
           Avis
@@ -84,7 +94,11 @@
 
 </div>
 
+<?php
 
+}
+$reponse->closeCursor();
+?>
 
 </body>
 

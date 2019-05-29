@@ -9,6 +9,12 @@
   <title>PORTEFOLIO</title>
 </head>
 
+<?php
+$bdd = new PDO('mysql:host=localhost;dbname=recrutement;charset=utf8', 'root', '');
+$requete = "SELECT * FROM etudiant";
+$reponse = $bdd->query($requete);
+?>
+
 <body>
   <?php include "header.php" ?>
 
@@ -19,178 +25,25 @@
 
   <div class="cards-list">
 
-  <a href="#"><div class="card">
+
+      <?php
+            while($donnees = $reponse->fetch())
+            {
+              ?>
+
+  <a href="jury_admin.php?id=<?php echo $donnees["idhor"];?>">
+    <div class="card">
       <div class="card_image">
-        <img src="img/logo.png" /> </div>
+        <img src="<?php echo $donnees["liphoto"]; ?>" /> </div>
       <div class="card_title">
-        <p>SPECIMEN NAME</p>
-      </div>
-    </div></a>
-
-    <div class="card">
-      <div class="card_image">
-        <img src="img/logo.png" />
-      </div>
-      <div class="card_title">
-        <p>Card Title</p>
+        <p><?php echo $donnees["nom"]; ?> <?php echo $donnees["prenom"]; ?></p>
       </div>
     </div>
+  </a>
 
-    <div class="card">
-      <div class="card_image">
-        <img src="img/logo.png" />
-      </div>
-      <div class="card_title">
-        <p>Card Title</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card_image">
-        <img src="img/logo.png" />
-      </div>
-      <div class="card_title title-black">
-        <p>Card Title</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card_image">
-        <img src="img/logo.png" />
-      </div>
-      <div class="card_title title-black">
-        <p>Card Title</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card_image">
-        <img src="img/logo.png" />
-      </div>
-      <div class="card_title title-black">
-        <p>Card Title</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card_image">
-        <img src="img/logo.png" />
-      </div>
-      <div class="card_title title-black">
-        <p>Card Title</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card_image">
-        <img src="img/logo.png" />
-      </div>
-      <div class="card_title title-black">
-        <p>Card Title</p>
-      </div>
-    </div>
-
-
-    <div class="card">
-      <div class="card_image">
-        <img src="img/logo.png" />
-      </div>
-      <div class="card_title title-black">
-        <p>Card Title</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card_image">
-        <img src="img/logo.png" />
-      </div>
-      <div class="card_title title-black">
-        <p>Card Title</p>
-      </div>
-    </div>
-        <div class="card">
-          <div class="card_image">
-            <img src="img/logo.png" />
-          </div>
-          <div class="card_title title-black">
-            <p>Card Title</p>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="card_image">
-            <img src="img/logo.png" />
-          </div>
-          <div class="card_title title-black">
-            <p>Card Title</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card_image">
-            <img src="img/logo.png" />
-          </div>
-          <div class="card_title title-black">
-            <p>Card Title</p>
-          </div>
-        </div>
-
-
-            <div class="card">
-              <div class="card_image">
-                <img src="img/logo.png" />
-              </div>
-              <div class="card_title title-black">
-                <p>Card Title</p>
-              </div>
-            </div>
-
-
-            <div class="card">
-              <div class="card_image">
-                <img src="img/logo.png" />
-              </div>
-              <div class="card_title title-black">
-                <p>Card Title</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card_image">
-                <img src="img/logo.png" />
-              </div>
-              <div class="card_title title-black">
-                <p>Card Title</p>
-              </div>
-            </div>
-                <div class="card">
-                  <div class="card_image">
-                    <img src="img/logo.png" />
-                  </div>
-                  <div class="card_title title-black">
-                    <p>Card Title</p>
-                  </div>
-                </div>
-
-
-                <div class="card">
-                  <div class="card_image">
-                    <img src="img/logo.png" />
-                  </div>
-                  <div class="card_title title-black">
-                    <p>Card Title</p>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <div class="card_image">
-                    <img src="img/logo.png" />
-                  </div>
-                  <div class="card_title title-black">
-                    <p>Card Title</p>
-                  </div>
-                </div>
+    <?php
+          }
+          ?>
 
 
 

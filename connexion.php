@@ -8,10 +8,11 @@
 
 </head>
 <body>
-<?php include "header.php" ?>
 
 
-<form method="post" action="/allocinemet/connexion.php">
+<form method="post" action="">
+      <fieldset class="float-left">
+        <legend>Etat Civil<span>*</span></legend>
 
   <div class="container">
     <label for="uname"><b>Identifiant<span>*</span></b></label>
