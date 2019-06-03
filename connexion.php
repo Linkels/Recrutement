@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 <form method="post" action="">
       <fieldset class="float-left">
         <legend>Etat Civil<span>*</span></legend>
