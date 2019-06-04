@@ -10,6 +10,7 @@
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
 	<!-- Custom stlylesheet -->
+	<link rel="stylesheet" href="css/main.css">
 	<link type="text/css" rel="stylesheet" href="css/404.css" />
   <link rel="stylesheet" href="css/animate.css">
 
@@ -22,11 +23,11 @@
 	<div id="notfound">
 		<div class="notfound ">
 			<div class="notfound-404  animated bounceInDown">
-				<img src="img/logo.png" alt="" width="30%">
+				<img src="img/logo_noire.png" alt="" width="30%">
 				<h2>404 - Vous êtes Hors Simplon !</h2>
 			</div>
       <div class="animated bounceInUp">
-			<a href="index.html"><h1>retour</h1></a>
+				<center><a href="index.html"><li class="bouton">Retour accueil</li></a></center>
       </div>
 		</div>
 	</div>

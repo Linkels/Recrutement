@@ -70,8 +70,34 @@ body {
   right: 0;
 }
 
+.bouton a {
+  text-decoration: none;
+}
 
+.bouton{
+    background: #ee144f;
+    padding: 9px 5px;
+    border-radius: 1rem;
+    color: white;
+    width: 50%;
+}
 
+.bouton:hover{
+    background-color: #fff;
+      color: crimson;
+}
+
+li{
+    list-style: none;
+    padding: 1rem;
+}
+
+a{
+    font-weight: bold;
+    margin: 0 1rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
 
 
 @media only screen and (max-width: 767px) {
