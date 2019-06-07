@@ -1,7 +1,5 @@
 <?php
 
-
-
 include ('connectBDD.php');
 
 $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : NULL;
@@ -19,11 +17,34 @@ $diplome = isset($_POST['diplome']) ? $_POST['diplome'] : NULL;
 $disponib = isset($_POST['disponib']) ? $_POST['disponib'] : NULL;
 $photo = isset($_POST['photo']) ? $_POST['photo'] : NULL;
 
+echo $nom;
 
-$sql = $bdd->prepare ("INSERT INTO etudiant (nom, prenom, datenai, adresse_perso, codep, ville, nationalite, email, numtels, profilsuppl, lastdipl, disponib, liphoto)
-    VALUES ('$nom', '$prenom', '$date_naissance', '$adresse', '$code_postal', '$ville', '$nationalite', '$email', '$tel', '$statut', '$diplome', '$disponib', '$photo')");
+$sql = $bdd->prepare ("INSERT INTO etudiant (nom, prenom, datenai, adresse_perso, codep, ville, nationalite, email, numtels, situactu, lastdipl, disponib, liphoto)
+    VALUES (:nom, :prenom, :datenai, :adresse_perso, :codep, :ville, :nationalite, :email, :numtels, :situactu, :lastdipl, :disponib, :liphoto)");
+$sql->execute(array(
+  'prenom' => $prenom,
+  'nom' => $nom,
+  'datenai' => $date_naissance,
+  'adresse_perso' => $adresse,
+  'codep' => $code_postal,
+  'ville' => $ville,
+  'nationalite' => $nationalite,
+  'email' => $email,
+  'numtels' => $tel,
+  'situactu' => $statut,
+  'lastdipl' => $diplome,
+  'disponib' => $disponib,
+  'liphoto' => $photo
+));
 
-    $sql->execute();
 
-header('location:form_candidature_2.php')
+/*$skl=$bdd->prepare("SELECT * FROM etudiant ORDER BY idhor DESC LIMIT 1");
+$skl->execute();
+
+$res=$skl->fetch();
+
+$id1=$res['idhor'];*/
+
+
+header('location:form_candidature_2.php');
 ?>

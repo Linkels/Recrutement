@@ -141,34 +141,34 @@
 
       <label>Quel est le dernier diplôme que vous ayez obtenu?</label><br/><br/>
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="sans") echo "checked";?> value="sans">Sans diplôme<br/>
+      <?php if (isset($diplome) && $diplome=="sans") echo "checked";?> value="sans">Sans diplôme<br/>
 
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="brevet") echo "checked";?> value="brevet">Diplôme National du Brevet (brevet des collèges)<br/>
+      <?php if (isset($diplome) && $diplome=="brevet") echo "checked";?> value="brevet">Diplôme National du Brevet (brevet des collèges)<br/>
 
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="CAP") echo "checked";?> value="CAP">CAP<br/>
+      <?php if (isset($diplome) && $diplome=="CAP") echo "checked";?> value="CAP">CAP<br/>
 
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="BEP") echo "checked";?> value="BEP">BEP<br/>
+      <?php if (isset($diplome) && $diplome=="BEP") echo "checked";?> value="BEP">BEP<br/>
 
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="bac") echo "checked";?> value="bac">Bac (dont équivalence bac)<br/>
+      <?php if (isset($diplome) && $diplome=="bac") echo "checked";?> value="bac">Bac (dont équivalence bac)<br/>
 
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="bac+2") echo "checked";?> value="bac+2">Bac +2<br/>
+      <?php if (isset($diplome) && $diplome=="bac+2") echo "checked";?> value="bac+2">Bac +2<br/>
 
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="licence") echo "checked";?> value="licence">Licence<br/>
+      <?php if (isset($diplome) && $diplome=="licence") echo "checked";?> value="licence">Licence<br/>
 
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="master") echo "checked";?> value="master">Master<br/>
+      <?php if (isset($diplome) && $diplome=="master") echo "checked";?> value="master">Master<br/>
 
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="doctorat") echo "checked";?> value="doctorat">Doctorat<br/>
+      <?php if (isset($diplome) && $diplome=="doctorat") echo "checked";?> value="doctorat">Doctorat<br/>
 
       <input type="radio" name="diplome" class="radio"
-      <?php if (isset($statut) && $statut=="autre") echo "checked";?> value="autre">Autre<br/><br/><br/>
+      <?php if (isset($diplome) && $diplome=="autre") echo "checked";?> value="autre">Autre<br/><br/><br/>
 
       <label>Êtes-vous disponible à temps plein dès la pré-rentrée, le 18 février 2019 ? </label><br/><br/>
       <input type="radio" name="disponib" class="radio"
@@ -186,12 +186,12 @@
         <!--<input type="submit" value="Valider cette photo"><br/><br/>-->
 
     </fieldset>
-  </form>
+
 
       <center>
       <input type="submit" name="submit" value="Passez aux questions suivantes">
       </center>
-
+</form>
       <p class="float-none"><span class="clr">* </span> Toutes les questions sont obligatoires, mais restent modifiables tant
         que vous ne validez pas votre formulaire à la dernière étape.</p>
 

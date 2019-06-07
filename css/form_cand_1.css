@@ -118,7 +118,7 @@ textarea {
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<mise en place des boutons*/
 
-input[type="submit"] {
+input[type="submit"], button {
   width: 20em;
   background-color: #da183b;
   color: white;
@@ -126,18 +126,10 @@ input[type="submit"] {
   font-weight: bold;
   border-radius: 0.7em;
   margin-top: 1em;
+  height: 3em;
+  border: none;
 }
 
-button {
-  width: 15em;
-  height: auto;
-  font-size: 1em;
-  padding: 0.5em 1em;
-  margin: 1em;
-  border-radius: 0.7em;
-  background-color: #da183b;
-  color: white;
-}
 
 button > a {
   color: white;

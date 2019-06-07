@@ -33,6 +33,7 @@
     $sql = "SELECT * FROM infospromo";
     foreach ($bdd->query($sql) as $row){
 }
+
   ?>
 
   <!---titre---->
@@ -57,40 +58,51 @@
   </div>
 
 <!--  formulaire -->
+<?php
+echo "id : ".$_POST['id1'];
+$sql=$bdd->prepare("SELECT * FROM etudiant WHERE idhor=".$_GET['id1']);
+$sql->execute();
 
-  <center><form id="form" action="/formulaire_candidature.php" method="POST">
+
+$id2=$_GET['id1'];
+
+?>
+
+  <center><form id="form" action="validation-temp-form2.php" method="POST">
+    <input type="hidden" name="name2" value=$name1>
+    <input type="hidden" name="prename2" value=$prename1>
+
     <fieldset class="float-left">
       <legend>Motivation <span class="clr">*</span></legend>
 
         <label>Si vous étiez un super-héros / une super-héroïne, qui seriez-vous et pourquoi?</label><br/>
-        <textarea name="heros" rows="7" cols="100" required></textarea><br/>
+        <textarea name="superheros" value="<?= $superheros;?>" rows="7" cols="100" required></textarea><br/>
 
 
         <label>Racontez-nous un de vos "hacks" (pas forcément technique ou informatique):</label><br/>
-        <textarea name="hack" rows="7" cols="100" required></textarea><br/>
+        <textarea name="hacks" value="<?= $hacks;?>" rows="7" cols="100" required></textarea><br/>
 
 
         <label>Dites-nous pourquoi vous souhaitez intégrer la formation :</label><br/>
-        <textarea name="pourquoi" rows="7" cols="100" required></textarea><br/>
+        <textarea name="intformat" value="<?= $intformat;?>" rows="7" cols="100" required></textarea><br/>
 
 
         <label>Racontez-nous votre parcours et détaillez-nous votre motivation en vous exprimant avec votre style,
-        mais ne vous limitez pas à un texte tapé à la va_vite. Aussi, n'hésitez pas à faire une vidéo, un site
+        mais ne vous limitez pas à un texte tapé à la va-vite. Aussi, n'hésitez pas à faire une vidéo, un site
         ou toute autre chose qui démontrera votre envie, votre motivation et vos compétences!</label><br/>
-        <textarea name="parcours" rows="7" cols="100" required></textarea><br/>
+        <textarea name="motivation" value="<?= $motivation;?>" rows="7" cols="100" required></textarea><br/>
 
         <label>Dans un an, avec vos nouveaux superpouvoirs de code informatique, que souhaiteriez-vous faire dans votre vie?</label><br/>
-        <textarea name="futur" rows="7" cols="100" required></textarea><br/>
+        <textarea name="dansunan" value="<?= $dansunan;?>" rows="7" cols="100" required></textarea><br/>
 
     </fieldset>
 
+      <center>
+        <button><a href="form_candidature_1.php">Revenir aux questions précédentes</a></button>
+        <input type="submit" name="submit" value="Passez aux questions suivantes">
+      </center>
 
-  </form></center>
-
-  <center>
-    <button><a href="form_candidature_1.php">Revenir aux questions précédentes</a></button>
-    <button><a href="form_candidature_3.php">Passez aux questions suivantes</a></button>
-  </center>
+    </form></center>
 
       <p class="float-none"><span class="clr">* </span> Toutes les questions sont obligatoires, mais restent modifiables tant
         que vous ne validez pas votre formulaire à la dernière étape.</p>
