@@ -8,6 +8,7 @@
 
 </head>
 <body>
+  <?php include "header.php" ?>
 
 <form method="post" action="">
       <fieldset class="float-left">

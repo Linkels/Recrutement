@@ -1,0 +1,28 @@
+<?php
+
+
+
+include ('connectBDD.php');
+
+$prenom = $_POST["prenom"];
+$nom = $_POST["nom"];
+$date_naissance = $_POST["date_naissance"];
+$adresse = $_POST["adresse"];
+$code_postal = $_POST["code_postal"];
+$ville = $_POST["ville"];
+$nationalite = $_POST["nationalite"];
+$email = $_POST["email"];
+$tel = $_POST["tel"];
+$statut = $_POST["statut"];
+$diplome = $_POST["diplome"];
+$photo = $_POST["photo"];
+
+
+$sql = ("INSERT INTO etudiant (prenom, nom, datenai, adresse_perso, codep, ville, nationalite, email, numtels, profilsuppl, lastdipl, liphoto)
+VALUES ('$prenom', '$nom', '$date_naissance', '$adresse', '$code_postal', '$ville', '$nationalite', '$email', '$tel', '$statut', '$diplome', '$photo')");
+$stmt= $bdd->prepare($sql);
+
+$stmt->execute();
+
+header('location:form_candidature_2.php')
+?>

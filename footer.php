@@ -1,44 +1,42 @@
 <link rel="stylesheet" href="css/footer.css">
-<footer class="page-footer">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-  <div class="container-foot">
-        <div class="row">
-            <figure class="img-foot">
-                <center><img src="logo/scm_logo_rond_lg.png" alt="logo" /></center>
-                <figcaption>"In Code We Trust"</figcaption>
-            </figure>
 
-    <!--<div class="column1">
-        <h5 class="title-foot">Links</h5>
-            <ul class="list-unstyled">
-                <li><a href="#">Link 1</a></li>
+<footer class="flex-rw">
 
-                <li><a href="#">Link 2</a></li>
+  <ul class="footer-list-top">
+    <li>
+      <h4 class="footer-list-header">A PROPOS DE SIMPLON</h4>
+    </li>
+    <li><a href="#" class="generic-anchor footer-list-anchor">QUI NOUS SOMMES ?</a></li>
+    <li><a href="#" class="generic-anchor footer-list-anchor">EVENTS</a></li>
+  </ul>
 
-                <li><a href="#">Link 3</a></li>
+  <ul class="footer-list-top">
+    <li>
+      <h4 class="footer-list-header"><a href="index.php"> <img src="img/logo.png" alt=""> </strong></a></h4>
+        <span class="footer-social-overlap footer-social-icons-wrapper">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+    </li>
+</ul>
 
-                <li><a href="#">Link 4</a></li>
-            </ul>
-    </div>-->
+  <ul class="footer-list-top">
+    <li id='help'>
+      <h4 class="footer-list-header">INFO & CONTACT</h4>
+    </li>
+    <li><a href="#" class="generic-anchor footer-list-anchor">CONTACT</a></li>
+    <li><a href="#" class="generic-anchor footer-list-anchor">FAQ</a></li>
+</ul>
 
-    <div class="column2">
-        <h5 class="title-foot">Liens utiles</h5>
-            <ul class="list-unstyled">
-                <li ><a class="link-foot" href="http://www.simplon-charleville.fr/index.php">Simplon Charleville</a></li>
 
-                <li><a class="link-foot" href="https://simplon.co/">Simplon.co</a></li>
+  <section class="footer-bottom-section flex-rw">
+    <div class="footer-bottom-wrapper">
+      <i class="fa fa-copyright" role="copyright">
 
-                <li><a class="link-foot" href="#">Nous contacter</a></li>
-
-                <li><a class="link-foot" href="http://www.simplon-charleville.fr/portfolio.php">Qui sommes-nous?</a></li>
-            </ul>
+      </i> 2019 SIMPLON </address><span class="footer-bottom-rights"> - All Rights Reserved</span>
     </div>
-  </div>
-</div>
-
-    <!-- Copyright -->
-    <div class="footer-copyright">
-        <p>© 2019 Copyright:<a> Simplon </a></p>
+    <div class="footer-bottom-wrapper">
+      <a href="/terms-of-use.html" class="generic-anchor" rel="nofollow">Terms</a> | <a href="/privacy-policy.html" class="generic-anchor" rel="nofollow">Privacy</a>
     </div>
-    <!-- Copyright -->
+  </section>
 </footer>

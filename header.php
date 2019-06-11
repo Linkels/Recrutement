@@ -1,13 +1,20 @@
 <link rel="stylesheet" href="css/header.css">
-<header>
-           <div class="container">
-               <nav>
-                   <div class="img-banner">
-                       <a href="index.html"><img class="logo" src="img/scm_logo.png"></a>
-                   </div>
-                   <ul>
-                       <li class="button"><a href="#">Mon compte</a></li>
-                   </ul>
-               </nav>
-           </div>
-</header>
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      <img src="img/logo.png" width="35%" alt="">
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="nav-links">
+    <a href="login.php">Compte</a>
+  </div>
+</div>
