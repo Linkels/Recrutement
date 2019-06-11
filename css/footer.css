@@ -1,9 +1,4 @@
-
-
-
-
-/* Keyframes */
-
+/* slider du footer */
 
 @-webkit-keyframes scroll {
   0% {
@@ -66,20 +61,7 @@
   width: 250px;
 }
 
-
-
-
-
-
-/* Responsive */
-
-
-
-
-
-
-
-
+/* fin du slider */
 
 
 footer.body {
