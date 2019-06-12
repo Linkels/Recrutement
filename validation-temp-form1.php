@@ -1,5 +1,4 @@
 <?php
-//header('location:form_candidature_t.php');
 
 include ('connectBDD.php');
 
@@ -37,20 +36,11 @@ $sql->execute(array(
   'liphoto' => $photo
 ));
 
-
-$skl=$bdd->prepare("SELECT * FROM etudiant ORDER BY idhor DESC LIMIT 1");
+$skl = $bdd->prepare('SELECT * FROM etudiant ORDER BY idhor DESC');
 $skl->execute();
-
 $res=$skl->fetch();
 
-?>
- <form action="form_candidature_t.php" method="POST">
-   $id=$res['idhor'];
+$id=$res['idhor'];
 
-    <input type="text" name="id1" value="<?= $id;?>">
- </form>
-<?php
-
-
-
+header('location:form_candidature_2.php?val='.$res['idhor']);
 ?>

@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/admin.css">
 </head>
 
-<body>
+<body id="haut">
   <!--pour inclure le header-->
   <?php
 
@@ -26,10 +26,12 @@
 
   include 'connectBDD.php';
 
-  //  $sql = "SELECT * FROM utlisateur";
-        //foreach ($bdd->query($sql) as $row){
-//}
-  ?>
+  $sql = $bdd->prepare("SELECT * FROM utilisateur");
+  $sql->execute();
+
+  $resultat = $sql->fetch();
+
+?>
 
 <!--début du contenu "main"-->
 
@@ -38,7 +40,7 @@
     <!---titre---->
 
     <div id="titre">
-      <h1>Bienvenue <?= $row['user'];?> à la gestion des sessions
+      <h1>Bienvenue <?= $resultat['prenom'];?> à la gestion des utilisateurs
       </h1>
     </div>
 
@@ -52,6 +54,11 @@
 
 <!--début formulaire sessions-->
 
+<?php
+  $sql = "SELECT * FROM utilisateur";
+
+?>
+
   <table id="tableau-gestion" >
     <caption>Tableau de gestion des utilisateurs</caption>
         <tr>
@@ -64,24 +71,24 @@
           <th style="background:black;">Supprimer</th>
         </tr>
         <tr>
-          <td><?= $row['nom'];?></td>
-          <td><?= $row['prenom'];?></td>
-          <td><?= $row['ulogin'];?></td>
-          <td><?= $row['mail'];?></td>
+          <?php
+          foreach ($bdd->query($sql) as $donnees) {
+             ?>
+          <td><?= $donnees['nom'];?></td>
+          <td><?= $donnees['prenom'];?></td>
+          <td><?= $donnees['ulogin'];?></td>
+          <td><?= $donnees['mail'];?></td>
           <td><a href="#idjury"><i class="fas fa-user-edit fa-lg"></i></a></td>
           <td><a href="#idadmin"><i class="fas fa-user-edit fa-lg"></i></a></td>
           <td><a href="#idsupp"><i class="fas fa-trash-restore fa-lg"></i></a></td>
         </tr>
-        <tr>
-          <td><?= $row['nom'];?></td>
-          <td><?= $row['prenom'];?></td>
-          <td><?= $row['ulogin'];?></td>
-          <td><?= $row['mail'];?></td>
-          <td><i class="fas fa-user-edit fa-lg"></i></td>
-          <td><i class="fas fa-user-edit fa-lg"></i></td>
-          <td><i class="fas fa-trash-restore fa-lg"></i></td>
-        </tr>
+        <?php
+        }
+        $sql->closeCursor;
+        ?>
+
   </table>
+
 
   <!--début fenêtres modales-->
 
@@ -163,7 +170,15 @@
     </div>
   </div>
 
-</div>
+  <!--//////////////////////////////  BACK TO TOP BTN  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+    <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
+
+    </div>
+    <!--//////////////////////////////  SCRIPTS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+      <script src="js/main.js"></script>
+
 
 
 </body>

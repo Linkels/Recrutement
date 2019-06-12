@@ -26,9 +26,11 @@
 
   include 'connectBDD.php';
 
-    //$sql = "SELECT * FROM utlisateur";
-      //foreach ($bdd->query($sql) as $row){
-//}
+    $sql = $bdd->prepare("SELECT * FROM utilisateur");
+    $sql->execute();
+
+    $resultat = $sql->fetch();
+
   ?>
 
 <!--début du contenu "main"-->
@@ -38,9 +40,10 @@
     <!---titre---->
 
     <div id="titre">
-      <h1>Bienvenue <?= $row['prenom'];?> à la gestion du recrutement de SIMPL<span class="clr">O</span>N Charleville-Mézières
+      <h1>Bienvenue <?= $resultat['prenom'];?> à la gestion du recrutement de SIMPL<span class="clr">O</span>N Charleville-Mézières
       </h1>
     </div>
+
 
 <!--début menu gestion-->
     <div class="vertical-menu">

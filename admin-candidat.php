@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/admin.css">
 </head>
 
-<body>
+<body id="haut">
   <!--pour inclure le header-->
   <?php
 
@@ -26,9 +26,11 @@
 
   include 'connectBDD.php';
 
-  //  $sql = "SELECT * FROM utlisateur";
-        //foreach ($bdd->query($sql) as $row){
-//}
+  $sql = $bdd->prepare("SELECT * FROM utilisateur");
+  $sql->execute();
+
+  $resultat = $sql->fetch();
+
   ?>
 
 <!--début du contenu "main"-->
@@ -38,7 +40,7 @@
     <!---titre---->
 
     <div id="titre">
-      <h1>Bienvenue <?= $row['user'];?> à la gestion des candidats
+      <h1>Bienvenue <?= $resultat['prenom'];?> à la gestion des candidats
       </h1>
     </div>
 
@@ -51,6 +53,11 @@
   </div>
 
 <!--début tableau Utilisateurs-->
+
+<?php
+  $sql = "SELECT * FROM etudiant";
+
+?>
 
   <table id="tableau-gestion" >
     <caption>Tableau de gestion des utilisateurs</caption>
@@ -65,25 +72,22 @@
           <th style="background:black;">Validation 2ème sélection</th>
         </tr>
         <tr>
-          <td><?= $row['nom'];?></td>
-          <td><?= $row['prenom'];?></td>
-          <td><?= $row['date_inscription'];?></td>
-          <td><a href="admin-detail.php"><i class="fas fa-info-circle fa-lg"></i></a></td>
+          <?php
+          foreach ($bdd->query($sql) as $donnees) {
+             ?>
+          <td><?= $donnees['nom'];?></td>
+          <td><?= $donnees['prenom'];?></td>
+          <td><?= $donnees['date_inscription'];?></td>
+          <td><a href="admin-detail.php?vab=<?= $donnees['idhor'];?>"><i class="fas fa-info-circle fa-lg"></i></a></td>
           <td><a href="#idval1"><i class="far fa-check-square fa-lg"></i></a></td>
           <td><a href="#idsession"><i class="fas fa-list-ol fa-lg"></i></a></td>
           <td><?= $row['moynote'];?></td>
           <td><a href="#idval2"><i class="far fa-check-circle fa-2x bgd"></i></a></td>
         </tr>
-        <tr>
-          <td><?= $row['nom'];?></td>
-          <td><?= $row['prenom'];?></td>
-          <td><?= $row['date_inscription'];?></td>
-          <td><a href="admin-detail.php"><i class="fas fa-info-circle fa-lg"></a></i></td>
-          <td><i class="far fa-check-square fa-lg"></i></td>
-          <td><i class="fas fa-list-ol fa-lg"></i></td>
-          <td><?= $row['moynote'];?></td>
-          <td><i class="far fa-check-circle fa-2x bgd"></td>
-        </tr>
+        <?php
+        }
+        $sql->closeCursor;
+        ?>
   </table>
 
   <!--début fenêtres modales-->
@@ -167,9 +171,15 @@
       </div>
     </div>
   </div>
+  <!--//////////////////////////////  BACK TO TOP BTN  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
+    <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
 
-</div>
+    </div>
+    <!--//////////////////////////////  SCRIPTS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+      <script src="js/main.js"></script>
+
 
 
 </body>

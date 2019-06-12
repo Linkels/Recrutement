@@ -58,19 +58,12 @@
   </div>
 
 <!--  formulaire -->
-<?php
-echo "id : ".$_GET['id1'];
-$sql=$bdd->prepare("SELECT * FROM etudiant WHERE idhor=".$_GET['id1']);
-$sql->execute();
-
-
-$id2=$_GET['id1'];
-
-?>
 
   <center><form id="form" action="validation-temp-form2.php" method="POST">
-    <input type="hidden" name="name2" value=$name1>
-    <input type="hidden" name="prename2" value=$prename1>
+    <?php
+      $id2 = $_GET['val'];
+     ?>
+     <input type="text" name="idd" value="<?= $id2;?>"><br>
 
     <fieldset class="float-left">
       <legend>Motivation <span class="clr">*</span></legend>
