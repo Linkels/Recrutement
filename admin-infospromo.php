@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -26,9 +29,11 @@
 
   include 'connectBDD.php';
 
-  //  $sql = "SELECT * FROM utlisateur";
-        //foreach ($bdd->query($sql) as $row){
-//}
+  $sql = $bdd->prepare("SELECT * FROM utilisateur");
+  $sql->execute();
+
+  $resultat = $sql->fetch();
+
   ?>
 
 <!--début du contenu "main"-->
@@ -38,7 +43,7 @@
     <!---titre---->
 
     <div id="titre">
-      <h1>Bienvenue <?= $row['user'];?> à la gestion des informations de la promo
+      <h1>Bienvenue <?= $_SESSION['prenom']." ".strtoupper($_SESSION['nom']);?> à la gestion des informations de la promo
       </h1>
     </div>
 
@@ -48,6 +53,7 @@
     <a href="admin-candidat.php">Candidats</a>
     <a href="admin-session.php">Sessions</a>
     <a href="admin-infospromo.php">Infos Promo</a>
+    <a href="#deconnexion">Déconnexion</a>
   </div>
 
 <!--début formulaire sessions-->
@@ -79,6 +85,34 @@
     </center>
 
   </form>
+
+  <!--début fenêtres modales-->
+
+  <div id="deconnexion" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <header class="container">
+          <a href="#" class="closebtn">×</a>
+          <h4>Déconnexion</h4>
+        </header>
+        <div class="container">
+          <form id="form-modal" action="validation-val1s.php" method="POST">
+            <label>Etes-vous sûr de vouloir vous déconnecter? </label><br/><br/>
+              <div class="cnt">
+              <input type="radio" name="deconnect" class="radio"
+            <?php if (isset($jury) && $jury=="oui") echo "checked";?> value="oui">Oui<br/>
+
+              <input type="radio" name="jury" class="radio"
+            <?php if (isset($jury) && $jury=="non") echo "checked";?> value="non">Non<br/>
+
+              <input type="submit" name="submit" value="Valider">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 

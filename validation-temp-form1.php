@@ -18,8 +18,8 @@ $disponib = isset($_POST['disponib']) ? $_POST['disponib'] : NULL;
 $photo = isset($_POST['photo']) ? $_POST['photo'] : NULL;
 
 
-$sql = $bdd->prepare ("INSERT INTO etudiant (nom, prenom, datenai, adresse_perso, codep, ville, nationalite, email, numtels, situactu, lastdipl, disponib, liphoto)
-    VALUES (:nom, :prenom, :datenai, :adresse_perso, :codep, :ville, :nationalite, :email, :numtels, :situactu, :lastdipl, :disponib, :liphoto)");
+$sql = $bdd->prepare ("INSERT INTO etudiant (nom, prenom, datenai, adresse_perso, codep, ville, nationalite, email, numtels, situactu, lastdipl, disponib, liphoto, date_insc)
+    VALUES (:nom, :prenom, :datenai, :adresse_perso, :codep, :ville, :nationalite, :email, :numtels, :situactu, :lastdipl, :disponib, :liphoto, NOW())");
 $sql->execute(array(
   'prenom' => $prenom,
   'nom' => $nom,

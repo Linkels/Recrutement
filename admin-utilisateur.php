@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -40,7 +43,7 @@
     <!---titre---->
 
     <div id="titre">
-      <h1>Bienvenue <?= $resultat['prenom'];?> à la gestion des utilisateurs
+      <h1>Bienvenue <?= $_SESSION['prenom']." ".strtoupper($_SESSION['nom']);?> à la gestion des utilisateurs
       </h1>
     </div>
 
@@ -50,6 +53,7 @@
     <a href="admin-candidat.php">Candidats</a>
     <a href="admin-session.php">Sessions</a>
     <a href="admin-infospromo.php">Infos Promo</a>
+    <a href="#deconnexion">Déconnexion</a>
   </div>
 
 <!--début formulaire sessions-->
@@ -101,13 +105,19 @@
         </header>
         <div class="container">
           <form id="form-modal" action="validation-val1s.php" method="POST">
-            <label>Voulez-vous donner les droits "jury" à cet utilisateur? </label><br/><br/>
+            <label>Quels droits "jury" voulez-vous donner à cet utilisateur? </label><br/><br/>
               <div class="cnt">
               <input type="radio" name="jury" class="radio"
-            <?php if (isset($jury) && $jury=="oui") echo "checked";?> value="oui">oui<br/>
+            <?php if (isset($jury) && $jury=="juryadm") echo "checked";?> value="juryadm">Jury administration<br/>
 
               <input type="radio" name="jury" class="radio"
-            <?php if (isset($jury) && $jury=="non") echo "checked";?> value="non">non<br/>
+            <?php if (isset($jury) && $jury=="jurymot") echo "checked";?> value="jurymot">Jury motivation<br/>
+
+            <input type="radio" name="jury" class="radio"
+          <?php if (isset($jury) && $jury=="jurytech") echo "checked";?> value="jurytech">Jury technique<br/>
+
+            <input type="radio" name="jury" class="radio"
+          <?php if (isset($jury) && $jury=="jurynon") echo "checked";?> value="jurynon">Aucun<br/>
 
               <input type="submit" name="submit" value="Valider">
             </div>
@@ -160,6 +170,34 @@
 
               <input type="radio" name="supp" class="radio"
             <?php if (isset($supp) && $supp=="non") echo "checked";?> value="non">non<br/>
+
+              <input type="submit" name="submit" value="Valider">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--début fenêtres modales-->
+
+  <div id="deconnexion" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <header class="container">
+          <a href="#" class="closebtn">×</a>
+          <h4>Déconnexion</h4>
+        </header>
+        <div class="container">
+          <form id="form-modal" action="validation-val1s.php" method="POST">
+            <label>Etes-vous sûr de vouloir vous déconnecter? </label><br/><br/>
+              <div class="cnt">
+              <input type="radio" name="deconnect" class="radio"
+            <?php if (isset($jury) && $jury=="oui") echo "checked";?> value="oui">Oui<br/>
+
+              <input type="radio" name="jury" class="radio"
+            <?php if (isset($jury) && $jury=="non") echo "checked";?> value="non">Non<br/>
 
               <input type="submit" name="submit" value="Valider">
             </div>
