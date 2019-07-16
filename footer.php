@@ -1,54 +1,6 @@
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-
-<div class="slider">
-<div class="slide-track">
-<div class="slide">
-<img src="img/Partners/01.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/02.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/03.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/04.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/05.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/06.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/p_cci.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/01.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/02.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/03.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/04.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/05.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/06.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/p_cci.png" height="100" width="250" alt="" />
-</div>
-</div>
-</div>
-
 <footer class="flex-rw">
 
   <ul class="footer-list-top">

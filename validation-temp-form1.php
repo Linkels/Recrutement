@@ -1,4 +1,5 @@
 <?php
+//header('location:form_candidature_t.php');
 
 include ('connectBDD.php');
 
@@ -17,7 +18,6 @@ $diplome = isset($_POST['diplome']) ? $_POST['diplome'] : NULL;
 $disponib = isset($_POST['disponib']) ? $_POST['disponib'] : NULL;
 $photo = isset($_POST['photo']) ? $_POST['photo'] : NULL;
 
-echo $nom;
 
 $sql = $bdd->prepare ("INSERT INTO etudiant (nom, prenom, datenai, adresse_perso, codep, ville, nationalite, email, numtels, situactu, lastdipl, disponib, liphoto)
     VALUES (:nom, :prenom, :datenai, :adresse_perso, :codep, :ville, :nationalite, :email, :numtels, :situactu, :lastdipl, :disponib, :liphoto)");
@@ -38,13 +38,19 @@ $sql->execute(array(
 ));
 
 
-/*$skl=$bdd->prepare("SELECT * FROM etudiant ORDER BY idhor DESC LIMIT 1");
+$skl=$bdd->prepare("SELECT * FROM etudiant ORDER BY idhor DESC LIMIT 1");
 $skl->execute();
 
 $res=$skl->fetch();
 
-$id1=$res['idhor'];*/
+?>
+ <form action="form_candidature_t.php" method="POST">
+   $id=$res['idhor'];
+
+    <input type="text" name="id1" value="<?= $id;?>">
+ </form>
+<?php
 
 
-header('location:form_candidature_2.php');
+
 ?>

@@ -15,6 +15,6 @@
   </div>
 
   <div class="nav-links">
-    <a href="login.php">Compte</a>
+    <a href="connexion.php">Compte</a>
   </div>
 </div>
