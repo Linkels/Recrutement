@@ -137,7 +137,7 @@ session_start();
         </header>
         <div class="container">
           <form id="form-modal" action="validation-val1s.php" method="POST">
-            <label>Voulez-vous donner les droits "jury" à cet utilisateur? </label><br/><br/>
+            <label>Voulez-vous donner les droits "administrateur" à cet utilisateur? </label><br/><br/>
               <div class="cnt">
               <input type="radio" name="admin" class="radio"
             <?php if (isset($admin) && $admin=="oui") echo "checked";?> value="oui">oui<br/>

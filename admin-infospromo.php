@@ -56,11 +56,11 @@ session_start();
     <a href="#deconnexion">Déconnexion</a>
   </div>
 
-<!--début formulaire sessions-->
+<!--début formulaire infos promos-->
 
 <form id="form" action="validation-infospromo.php" method="POST">
 
-      <fieldset class="float-left">
+      <fieldset >
         <legend> Modifier les informations de la promo </legend>
 
               <label>Nom de la promo</label><br/>

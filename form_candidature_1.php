@@ -99,7 +99,7 @@
           <input type="email" name="email" value="<?= $email;?>" required><br/>
 
 
-          <label>Numéro de téléphone où l'on peut vous joindre</label><br/>
+          <label>Numéro de téléphone où l'on peut vous joindre (format xx-xx-xx-xx)</label><br/>
           <input type="tel" name="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" value="<?= $tel;?>" required><br/>
 
     </fieldset>

@@ -63,7 +63,7 @@
     <?php
       $id2 = $_GET['val'];
      ?>
-     <input type="text" name="idd" value="<?= $id2;?>"><br>
+     <input type="hidden" name="idd" value="<?= $id2;?>"><br>
 
     <fieldset class="float-left">
       <legend>Motivation <span class="clr">*</span></legend>
