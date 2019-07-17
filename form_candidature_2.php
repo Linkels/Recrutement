@@ -30,8 +30,8 @@
 
   include 'connectBDD.php';
 
-    $sql = "SELECT * FROM infospromo";
-    foreach ($bdd->query($sql) as $row){
+  $sql = "SELECT * FROM infospromo";
+ foreach ($bdd->query($sql) as $row){
 }
 
   ?>
