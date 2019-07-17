@@ -64,28 +64,62 @@ session_start();
 
           <div class="form-flex">
             <div class="form-left">
-              <label>Nom de la session</label><br/>
-              <input type="text" name="nom_session" value="<?= $nom_session;?>" maxlength="20" required><br/>
+              <label>Numéro de la session</label><br/>
+              <input type="text" name="nom_session" maxlength="20" required><br/>
 
 
               <label>Date de la session</label><br/>
-              <input type="date" name="date_session" value="<?= $date_session;?>" required><br/>
+              <input type="date" name="date_session" required><br/>
 
 
               <label>Heure de la session</label><br/>
-              <input type="time" name="heure_session" value="<?= $heure_session;?>" required><br/>
+              <input type="time" step="60" min="00:00" name="heure_session" value="00:00:00" required><br/>
 
             </div>
             <div class="form-right">
+              <fieldset class="inter-fieldset">
+                <legend>Jury Administration</legend>
 
               <label>Nom du premier jury sélectionné</label><br/>
-              <input type="text" name="jury1" value="<?= $jury1;?>" required><br/>
+              <input type="text" name="jury1_session" required><br/>
 
               <label>Nom du deuxième jury sélectionné</label><br/>
-              <input type="text" name="jury2" value="<?= $jury2;?>"><br/>
+              <input type="text" name="jury2_session"><br/>
 
               <label>Nom du troisième jury sélectionné</label><br/>
-              <input type="text" name="jury3" value="<?= $jury3;?>"><br/>
+              <input type="text" name="jury3_session"><br/>
+
+            </fieldset>
+
+            <fieldset class="inter-fieldset">
+              <legend>Jury Motivation</legend>
+
+            <label>Nom du premier jury sélectionné</label><br/>
+            <input type="text" name="jury4_session" required><br/>
+
+            <label>Nom du deuxième jury sélectionné</label><br/>
+            <input type="text" name="jury5_session" ><br/>
+
+            <label>Nom du troisième jury sélectionné</label><br/>
+            <input type="text" name="jury6_session"><br/>
+
+            </fieldset>
+
+            <fieldset class="inter-fieldset">
+              <legend>Jury Technique</legend>
+
+            <label>Nom du premier jury sélectionné</label><br/>
+            <input type="text" name="jury7_session" required><br/>
+
+            <label>Nom du deuxième jury sélectionné</label><br/>
+            <input type="text" name="jury8_session"><br/>
+
+            <label>Nom du troisième jury sélectionné</label><br/>
+            <input type="text" name="jury9_session"><br/>
+
+            </fieldset>
+
+
             </div>
           </div>
     </fieldset>
