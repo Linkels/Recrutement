@@ -19,22 +19,6 @@ while ($donnees = $reponse->fetch())
 {
 ?>
 
-  <?php
-  	$avis = "2";
-  	$note = "";
-  	$id_jadmin = 0;
-
-  	if (isset($_POST['save'])) {
-  		$avis = $_POST['avis'];
-  		$note = $_POST['note'];
-
-  		mysqli_query($db, "INSERT INTO jury_admin (avis, note) VALUES ('$avis', '$note')");
-  		$_SESSION['message'] = "Note sauvegardé !";
-  		header('location: jury_admin.php');
-  	}
-    ?>
-
-
   <center>
     <h1>CANDIDAT <?php echo $donnees["idhor"]; ?> - JURY ADMIN</h1>
   </center>
@@ -68,6 +52,7 @@ while ($donnees = $reponse->fetch())
     $reponse->closeCursor();
     ?>
 
+
     <div id="bloc_1" class="animated zoomInLeft">
       <h1 class="titre-bloc1">
         Avis
@@ -77,10 +62,9 @@ while ($donnees = $reponse->fetch())
       </center>
       <h3 class="titre-inter-bloc1">
         <ul>
-          <div class="fake">
+          <form class="fake" action="crea_avis.php" method="post">
             <center>
-              <textarea></textarea>
-              <button class="btn" type="submit" name="save">Save</button>
+              <input type="text" name="avis" placeholder="avis">
               <div class="slidecontainer" style="width: 500px;">
                 <p class="zero">0</p>
                 <p class="other" style="padding-left: 48px;">-1</p>
@@ -91,8 +75,15 @@ while ($donnees = $reponse->fetch())
                 <p class="other" style="padding-left: 40px;">+2</p>
                 <p class="other" style="padding-left: 40px;">-3</p>
                 <p class="other" style="padding-left: 40px;">&nbsp3</p>
-                <input type="range" min="1" max="9" value="5" class="slider" id="myRange">
+                <div class="col-75">
+
+                  <input type="range" name="note" min="1" class="slider" max="9" step=0 value=0 oninput="valora.value=parseInt(notes.value)" />
+                  <output name="valora"> </output>
+                </div>
               </div>
+
+              <button class="btn" type="submit" name="submit">Save</button>
+          </form>
 
 
 
@@ -101,6 +92,15 @@ while ($donnees = $reponse->fetch())
     </div>
 
   </div>
+  <script>
+    $(function() {
+      $('.range').next().text('--'); // Valeur par défaut
+      $('.range').on('input', function() {
+        var $set = $(this).val();
+        $(this).next().text($set);
+      });
+    });
+  </script>
 
 </body>
 
