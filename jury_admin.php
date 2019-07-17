@@ -20,12 +20,6 @@ while ($donnees = $reponse->fetch())
 ?>
 
   <?php
-  $sql = $bdd->prepare("SELECT * FROM jury_admin");
-  $sql->execute();
-  $resultat = $sql->fetch();
-  ?>
-
-  <?php
   	$avis = "2";
   	$note = "";
   	$id_jadmin = 0;
@@ -86,10 +80,6 @@ while ($donnees = $reponse->fetch())
           <div class="fake">
             <center>
               <textarea></textarea>
-              <div class="input-group">
-                <label>avis</label>
-                <input type="text" name="avis" value="<?php echo $avis; ?>">
-              </div>
               <button class="btn" type="submit" name="save">Save</button>
               <div class="slidecontainer" style="width: 500px;">
                 <p class="zero">0</p>
