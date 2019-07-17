@@ -1,0 +1,92 @@
+
+
+/* Footer */
+
+.page-footer {
+    background: #000;
+    height: 260px;
+    clear: both;
+}
+
+.container-foot {
+    width: 70%;
+    height: 200px;
+    margin: auto;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer figure {
+    display: table-row;
+    width: 150px;
+    padding:
+}
+
+footer img {
+    padding: 2em 2em 1em 2em;
+}
+
+footer figcaption {
+    color: #fff;
+    font-size: 15px;
+    font-weight: lighter;
+    padding-left: 1.5em;
+}
+
+footer .column1 {
+    display: table-row;
+    color: #fff;
+    font-weight: lighter;
+    padding: 2.9rem 0;
+}
+
+footer .column2 {
+    display: table-row;
+    color: #fff;
+    font-weight: lighter;
+    padding: 2.9rem 0;
+}
+
+ .title-foot {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+ footer.list-unstyled > li {
+    list-style: none;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+.link-foot {
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    margin: 0.5em;
+}
+
+.link-foot:hover {
+  color: #da183b;
+}
+
+.footer-copyright {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    padding: 2em;
+    background: #333;
+    margin-top: 1em;
+}
+
+.footer-copyright a {
+    color: crimson;
+}
+
+/* Footer */

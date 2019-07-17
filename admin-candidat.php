@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,7 +20,7 @@
   <link rel="stylesheet" href="css/admin.css">
 </head>
 
-<body>
+<body id="haut">
   <!--pour inclure le header-->
   <?php
 
@@ -25,10 +28,12 @@
 
 
   include 'connectBDD.php';
+  $i=0;
+  $sql = $bdd->prepare("SELECT * FROM utilisateur");
+  $sql->execute();
 
-  //  $sql = "SELECT * FROM utlisateur";
-        //foreach ($bdd->query($sql) as $row){
-//}
+  $resultat = $sql->fetch();
+
   ?>
 
 <!--début du contenu "main"-->
@@ -38,9 +43,22 @@
     <!---titre---->
 
     <div id="titre">
-      <h1>Bienvenue <?= $row['user'];?> à la gestion des candidats
+      <h1>Bienvenue <?= $_SESSION['prenom']." ".strtoupper($_SESSION['nom']);?> à la gestion des candidats
       </h1>
     </div>
+
+    <?php
+    $sql = "SELECT * FROM etudiant";
+    foreach ($bdd->query($sql) as $donnees) {
+      $i++;
+        }
+       ?>
+
+    <aside> Nombre de candidats inscrits: <span class="bold"><?= $i; $i=0?></span></aside>
+    <?php
+
+    $sql->closeCursor;
+    ?>
 
 <!--début menu gestion-->
   <div class="vertical-menu">
@@ -48,9 +66,17 @@
     <a href="admin-candidat.php">Candidats</a>
     <a href="admin-session.php">Sessions</a>
     <a href="admin-infospromo.php">Infos Promo</a>
+    <a href="#deconnexion">Déconnexion</a>
   </div>
 
 <!--début tableau Utilisateurs-->
+
+<?php
+  $sql = "SELECT * FROM etudiant";
+
+?>
+
+
 
   <table id="tableau-gestion" >
     <caption>Tableau de gestion des utilisateurs</caption>
@@ -65,26 +91,25 @@
           <th style="background:black;">Validation 2ème sélection</th>
         </tr>
         <tr>
-          <td><?= $row['nom'];?></td>
-          <td><?= $row['prenom'];?></td>
-          <td><?= $row['date_inscription'];?></td>
-          <td><a href="admin-detail.php"><i class="fas fa-info-circle fa-lg"></i></a></td>
-          <td><a href="#idval1"><i class="far fa-check-square fa-lg"></i></a></td>
+          <?php
+          foreach ($bdd->query($sql) as $donnees) {
+            $i++;
+             ?>
+          <td><?= $donnees['nom'];?></td>
+          <td><?= $donnees['prenom'];?></td>
+          <td><?= $donnees['date_inscription'];?></td>
+          <td><a href="admin-detail.php?vab=<?= $donnees['idhor'];?>"><i class="fas fa-info-circle fa-lg"></i></a></td>
+          <td><a href="#idval1"><i class="fas fa-check-square fa-lg"></i></a></td>
           <td><a href="#idsession"><i class="fas fa-list-ol fa-lg"></i></a></td>
           <td><?= $row['moynote'];?></td>
-          <td><a href="#idval2"><i class="far fa-check-circle fa-2x bgd"></i></a></td>
+          <td><a href="#idval2"><i class="fas fa-check-circle fa-2x bgd"></i></a></td>
         </tr>
-        <tr>
-          <td><?= $row['nom'];?></td>
-          <td><?= $row['prenom'];?></td>
-          <td><?= $row['date_inscription'];?></td>
-          <td><a href="admin-detail.php"><i class="fas fa-info-circle fa-lg"></a></i></td>
-          <td><i class="far fa-check-square fa-lg"></i></td>
-          <td><i class="fas fa-list-ol fa-lg"></i></td>
-          <td><?= $row['moynote'];?></td>
-          <td><i class="far fa-check-circle fa-2x bgd"></td>
-        </tr>
+        <?php
+        }
+        $sql->closeCursor;
+        ?>
   </table>
+    <aside> Nombre de candidats inscrits: <span class="bold"><?= $i;?></span></aside>
 
   <!--début fenêtres modales-->
 
@@ -168,8 +193,42 @@
     </div>
   </div>
 
+  <!--début fenêtres modales-->
 
-</div>
+  <div id="deconnexion" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <header class="container">
+          <a href="#" class="closebtn">×</a>
+          <h4>Déconnexion</h4>
+        </header>
+        <div class="container">
+          <form id="form-modal" action="validation-val1s.php" method="POST">
+            <label>Etes-vous sûr de vouloir vous déconnecter? </label><br/><br/>
+              <div class="cnt">
+              <input type="radio" name="deconnect" class="radio"
+            <?php if (isset($jury) && $jury=="oui") echo "checked";?> value="oui">Oui<br/>
+
+              <input type="radio" name="jury" class="radio"
+            <?php if (isset($jury) && $jury=="non") echo "checked";?> value="non">Non<br/>
+
+              <input type="submit" name="submit" value="Valider">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--//////////////////////////////  BACK TO TOP BTN  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+    <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
+
+    </div>
+    <!--//////////////////////////////  SCRIPTS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+      <script src="js/main.js"></script>
+
 
 
 </body>

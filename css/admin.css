@@ -80,7 +80,7 @@ td > a {
   color: black;
 }
 
-.fas:hover {
+.fas:hover, i:hover {
   color: #da183b;
 }
 
@@ -153,6 +153,22 @@ input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
 input[type="submit"]:active, input[type="reset"]:active, button:active {
   transform: translateY(0.2em);
   box-shadow: 5px 5px 3px #666;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<mise en place de l'aside*/
+
+aside {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 0.8em;
+  border: #da183b solid 3px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -240,7 +256,8 @@ a#cRetour.cVisible {
 .modal-dialog .modal-content {
   margin: auto;
   background-color: #f3f3f3;
-  position: relative;
+  position
+  : relative;
   padding: 0;
   outline: 0;
   border: 1px #777 solid;
@@ -279,7 +296,7 @@ a#cRetour.cVisible {
   width: 100%;
 }
 
-#idval1 header, #idsession header, #idval2 header, #idjury header, #idadmin header, #idsupp header {
+#idval1 header, #idsession header, #idval2 header, #idjury header, #idadmin header, #idsupp header, #deconnexion header {
   background-color: black;
   font-size: 2em;
   color: white;

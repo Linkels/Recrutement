@@ -7,8 +7,6 @@
 body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
-  max-width: 1140px;
-  margin: 1em auto;
   display: flex;
   flex-direction: column;
 }
@@ -72,6 +70,7 @@ fieldset {
   margin: 1em auto;
   padding: 1em 8em;
   border: 3px solid black;
+  max-width: 1000px;
 }
 
 .champ2 {
@@ -150,6 +149,7 @@ input[type="submit"]:active, button:active {
 \\\\\\\\\\\\\\\\\\\_pour l'astéisque*/
 
 .float-none {
-  float: left;
+  text-align: center;
   padding: 1em;
+  font-style: italic;
 }

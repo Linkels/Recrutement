@@ -1,3 +1,22 @@
+<?php
+session_start();
+include ('connectBDD.php');
+
+    $_SESSION['uname'] = $_POST['uname'];
+
+    $sql = $bdd->prepare('SELECT * FROM utilisateur WHERE ulogin = :pseudo');
+
+     $sql->execute(array(
+         'pseudo' => $_POST['uname']));
+
+    if($resul = $sql->fetch()){
+    $isPasswordCorrect = password_verify($_POST['psw'], $resul['motdepassec']);
+
+
+        $_SESSION['nom'] = $resul['nom'];
+        $_SESSION['prenom'] = $resul['prenom'];
+
+}?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -24,11 +43,6 @@
   include 'header.php';
 
 
-  include 'connectBDD.php';
-
-    //$sql = "SELECT * FROM utlisateur";
-      //foreach ($bdd->query($sql) as $row){
-//}
   ?>
 
 <!--début du contenu "main"-->
@@ -38,9 +52,10 @@
     <!---titre---->
 
     <div id="titre">
-      <h1>Bienvenue <?= $row['prenom'];?> à la gestion du recrutement de SIMPL<span class="clr">O</span>N Charleville-Mézières
+      <h1>Bienvenue <?= $_SESSION['prenom']." ".strtoupper($_SESSION['nom']);?> à la gestion du recrutement de SIMPL<span class="clr">O</span>N Charleville-Mézières
       </h1>
     </div>
+
 
 <!--début menu gestion-->
     <div class="vertical-menu">
@@ -48,6 +63,35 @@
       <a href="admin-candidat.php">Candidats</a>
       <a href="admin-session.php">Sessions</a>
       <a href="admin-infospromo.php">Infos Promo</a>
+      <a href="#deconnexion">Déconnexion</a>
+    </div>
+
+    <!--début fenêtres modales-->
+
+    <div id="deconnexion" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <header class="container">
+            <a href="#" class="closebtn">×</a>
+            <h4>Déconnexion</h4>
+          </header>
+          <div class="container">
+            <form id="form-modal" action="validation-val1s.php" method="POST">
+              <label>Etes-vous sûr de vouloir vous déconnecter? </label><br/><br/>
+                <div class="cnt">
+                <input type="radio" name="deconnect" class="radio"
+              <?php if (isset($jury) && $jury=="oui") echo "checked";?> value="oui">Oui<br/>
+
+                <input type="radio" name="jury" class="radio"
+              <?php if (isset($jury) && $jury=="non") echo "checked";?> value="non">Non<br/>
+
+                <input type="submit" name="submit" value="Valider">
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>

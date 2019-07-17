@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,7 +20,7 @@
   <link rel="stylesheet" href="css/admin.css">
 </head>
 
-<body>
+<body id="haut">
   <!--pour inclure le header-->
   <?php
 
@@ -26,10 +29,12 @@
 
   include 'connectBDD.php';
 
-  //  $sql = "SELECT * FROM utlisateur";
-        //foreach ($bdd->query($sql) as $row){
-//}
-  ?>
+  $sql = $bdd->prepare("SELECT * FROM utilisateur");
+  $sql->execute();
+
+  $resultat = $sql->fetch();
+
+?>
 
 <!--début du contenu "main"-->
 
@@ -38,7 +43,7 @@
     <!---titre---->
 
     <div id="titre">
-      <h1>Bienvenue <?= $row['user'];?> à la gestion des sessions
+      <h1>Bienvenue <?= $_SESSION['prenom']." ".strtoupper($_SESSION['nom']);?> à la gestion des utilisateurs
       </h1>
     </div>
 
@@ -48,9 +53,15 @@
     <a href="admin-candidat.php">Candidats</a>
     <a href="admin-session.php">Sessions</a>
     <a href="admin-infospromo.php">Infos Promo</a>
+    <a href="#deconnexion">Déconnexion</a>
   </div>
 
 <!--début formulaire sessions-->
+
+<?php
+  $sql = "SELECT * FROM utilisateur";
+
+?>
 
   <table id="tableau-gestion" >
     <caption>Tableau de gestion des utilisateurs</caption>
@@ -64,24 +75,24 @@
           <th style="background:black;">Supprimer</th>
         </tr>
         <tr>
-          <td><?= $row['nom'];?></td>
-          <td><?= $row['prenom'];?></td>
-          <td><?= $row['ulogin'];?></td>
-          <td><?= $row['mail'];?></td>
+          <?php
+          foreach ($bdd->query($sql) as $donnees) {
+             ?>
+          <td><?= $donnees['nom'];?></td>
+          <td><?= $donnees['prenom'];?></td>
+          <td><?= $donnees['ulogin'];?></td>
+          <td><?= $donnees['mail'];?></td>
           <td><a href="#idjury"><i class="fas fa-user-edit fa-lg"></i></a></td>
           <td><a href="#idadmin"><i class="fas fa-user-edit fa-lg"></i></a></td>
           <td><a href="#idsupp"><i class="fas fa-trash-restore fa-lg"></i></a></td>
         </tr>
-        <tr>
-          <td><?= $row['nom'];?></td>
-          <td><?= $row['prenom'];?></td>
-          <td><?= $row['ulogin'];?></td>
-          <td><?= $row['mail'];?></td>
-          <td><i class="fas fa-user-edit fa-lg"></i></td>
-          <td><i class="fas fa-user-edit fa-lg"></i></td>
-          <td><i class="fas fa-trash-restore fa-lg"></i></td>
-        </tr>
+        <?php
+        }
+        $sql->closeCursor;
+        ?>
+
   </table>
+
 
   <!--début fenêtres modales-->
 
@@ -94,13 +105,19 @@
         </header>
         <div class="container">
           <form id="form-modal" action="validation-val1s.php" method="POST">
-            <label>Voulez-vous donner les droits "jury" à cet utilisateur? </label><br/><br/>
+            <label>Quels droits "jury" voulez-vous donner à cet utilisateur? </label><br/><br/>
               <div class="cnt">
               <input type="radio" name="jury" class="radio"
-            <?php if (isset($jury) && $jury=="oui") echo "checked";?> value="oui">oui<br/>
+            <?php if (isset($jury) && $jury=="juryadm") echo "checked";?> value="juryadm">Jury administration<br/>
 
               <input type="radio" name="jury" class="radio"
-            <?php if (isset($jury) && $jury=="non") echo "checked";?> value="non">non<br/>
+            <?php if (isset($jury) && $jury=="jurymot") echo "checked";?> value="jurymot">Jury motivation<br/>
+
+            <input type="radio" name="jury" class="radio"
+          <?php if (isset($jury) && $jury=="jurytech") echo "checked";?> value="jurytech">Jury technique<br/>
+
+            <input type="radio" name="jury" class="radio"
+          <?php if (isset($jury) && $jury=="jurynon") echo "checked";?> value="jurynon">Aucun<br/>
 
               <input type="submit" name="submit" value="Valider">
             </div>
@@ -120,7 +137,7 @@
         </header>
         <div class="container">
           <form id="form-modal" action="validation-val1s.php" method="POST">
-            <label>Voulez-vous donner les droits "jury" à cet utilisateur? </label><br/><br/>
+            <label>Voulez-vous donner les droits "administrateur" à cet utilisateur? </label><br/><br/>
               <div class="cnt">
               <input type="radio" name="admin" class="radio"
             <?php if (isset($admin) && $admin=="oui") echo "checked";?> value="oui">oui<br/>
@@ -163,7 +180,43 @@
     </div>
   </div>
 
-</div>
+  <!--début fenêtres modales-->
+
+  <div id="deconnexion" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <header class="container">
+          <a href="#" class="closebtn">×</a>
+          <h4>Déconnexion</h4>
+        </header>
+        <div class="container">
+          <form id="form-modal" action="validation-val1s.php" method="POST">
+            <label>Etes-vous sûr de vouloir vous déconnecter? </label><br/><br/>
+              <div class="cnt">
+              <input type="radio" name="deconnect" class="radio"
+            <?php if (isset($jury) && $jury=="oui") echo "checked";?> value="oui">Oui<br/>
+
+              <input type="radio" name="jury" class="radio"
+            <?php if (isset($jury) && $jury=="non") echo "checked";?> value="non">Non<br/>
+
+              <input type="submit" name="submit" value="Valider">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--//////////////////////////////  BACK TO TOP BTN  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+    <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
+
+    </div>
+    <!--//////////////////////////////  SCRIPTS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+      <script src="js/main.js"></script>
+
 
 
 </body>
