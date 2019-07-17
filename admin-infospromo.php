@@ -63,19 +63,19 @@ session_start();
       <fieldset >
         <legend> Modifier les informations de la promo </legend>
 
-              <label>Nom de la promo</label><br/>
-              <input type="text" name="nompromo" value="<?= $nompromo;?>" maxlength="10" required><br/>
+              <label>Numéro de la promo</label><br/>
+              <input type="text" name="nompromo" maxlength="10" required><br/>
 
 
               <label>Date de fin pour candidater</label><br/>
-              <input type="date" name="datecandidature" value="<?= $datecandidature;?>" required><br/>
+              <input type="date" name="datecandidature" required><br/>
 
 
               <label>Date de début de la promo</label><br/>
-              <input type="date" name="datedebutpromo" value="<?= $datedebutpromo;?>" required><br/>
+              <input type="date" name="datedebutpromo" required><br/>
 
               <label>Date de fin de la promo</label><br/>
-              <input type="date" name="datefinpromo" value="<?= $datefinpromo;?>" required><br/>
+              <input type="date" name="datefinpromo" required><br/>
 
     </fieldset>
 

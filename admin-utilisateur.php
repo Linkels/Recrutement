@@ -66,6 +66,7 @@ session_start();
   <table id="tableau-gestion" >
     <caption>Tableau de gestion des utilisateurs</caption>
         <tr>
+          <th>ID</th>
           <th>Nom</th>
           <th>Prénom</th>
           <th>Identifiant</th>
@@ -78,17 +79,19 @@ session_start();
           <?php
           foreach ($bdd->query($sql) as $donnees) {
              ?>
+          <td><?= $donnees['iduser'];?></td>
           <td><?= $donnees['nom'];?></td>
           <td><?= $donnees['prenom'];?></td>
           <td><?= $donnees['ulogin'];?></td>
           <td><?= $donnees['mail'];?></td>
-          <td><a href="#idjury"><i class="fas fa-user-edit fa-lg"></i></a></td>
+          <td><a href="#idjury"><i class="fas fa-user-edit fa-lg"><?php $id02= $donnees['iduser'];?></i></a></td>
           <td><a href="#idadmin"><i class="fas fa-user-edit fa-lg"></i></a></td>
           <td><a href="#idsupp"><i class="fas fa-trash-restore fa-lg"></i></a></td>
         </tr>
         <?php
         }
-        $sql->closeCursor;
+        /*
+        $sql->closeCursor;*/
         ?>
 
   </table>
@@ -104,20 +107,23 @@ session_start();
           <h4>Donner les droits "jury"</h4>
         </header>
         <div class="container">
-          <form id="form-modal" action="validation-val1s.php" method="POST">
+          <form id="form-modal" action="validation-jury.php?vall="<?php $id02; ?> method="POST">
+            <?php
+              //$id2 = $_GET['val'];
+
+              echo $id02;
+             ?>
+             <input type="hidden" name="idd" value="<?= $id02;?>"><br>
             <label>Quels droits "jury" voulez-vous donner à cet utilisateur? </label><br/><br/>
               <div class="cnt">
               <input type="radio" name="jury" class="radio"
-            <?php if (isset($jury) && $jury=="juryadm") echo "checked";?> value="juryadm">Jury administration<br/>
+            <?php if (isset($jury) && $jury=="jury_admin") echo "checked";?> value="jury_admin">Jury administration<br/>
 
               <input type="radio" name="jury" class="radio"
-            <?php if (isset($jury) && $jury=="jurymot") echo "checked";?> value="jurymot">Jury motivation<br/>
+            <?php if (isset($jury) && $jury=="jury_motiv") echo "checked";?> value="jury_motiv">Jury motivation<br/>
 
             <input type="radio" name="jury" class="radio"
-          <?php if (isset($jury) && $jury=="jurytech") echo "checked";?> value="jurytech">Jury technique<br/>
-
-            <input type="radio" name="jury" class="radio"
-          <?php if (isset($jury) && $jury=="jurynon") echo "checked";?> value="jurynon">Aucun<br/>
+          <?php if (isset($jury) && $jury=="jury_tech") echo "checked";?> value="jury_tech">Jury technique<br/>
 
               <input type="submit" name="submit" value="Valider">
             </div>
@@ -127,7 +133,10 @@ session_start();
       </div>
     </div>
   </div>
+      <?php
 
+      $sql->closeCursor;
+      ?>
   <div id="idadmin" class="modal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -136,7 +145,7 @@ session_start();
           <h4>Donner les droits "administrateur"</h4>
         </header>
         <div class="container">
-          <form id="form-modal" action="validation-val1s.php" method="POST">
+          <form id="form-modal" action="validation-admin.php" method="POST">
             <label>Voulez-vous donner les droits "administrateur" à cet utilisateur? </label><br/><br/>
               <div class="cnt">
               <input type="radio" name="admin" class="radio"

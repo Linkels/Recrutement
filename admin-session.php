@@ -64,7 +64,7 @@ session_start();
 
           <div class="form-flex">
             <div class="form-left">
-              <label>Numéro de la session</label><br/>
+              <label>Numéro de la session (1,2 ou 3)</label><br/>
               <input type="text" name="nom_session" maxlength="20" required><br/>
 
 

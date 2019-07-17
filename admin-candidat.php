@@ -97,7 +97,7 @@ session_start();
              ?>
           <td><?= $donnees['nom'];?></td>
           <td><?= $donnees['prenom'];?></td>
-          <td><?= $donnees['date_inscription'];?></td>
+          <td><?= $donnees['date_insc'];?></td>
           <td><a href="admin-detail.php?vab=<?= $donnees['idhor'];?>"><i class="fas fa-info-circle fa-lg"></i></a></td>
           <td><a href="#idval1"><i class="fas fa-check-square fa-lg"></i></a></td>
           <td><a href="#idsession"><i class="fas fa-list-ol fa-lg"></i></a></td>
