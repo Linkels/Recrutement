@@ -14,7 +14,6 @@ fieldset {
   margin: 1em auto;
   padding: 1em 4em;
   border: 3px solid black;
-  max-width: 1000px;
 }
 
 
@@ -62,6 +61,10 @@ button:hover {
     font-size: 12px;
 }
 
+.remember input {
+  vertical-align: middle;
+}
+
 .container {
     flex-direction: row;
     width: 50%;
@@ -97,8 +100,35 @@ span{
 }
 
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+/* Media query */
+
+@media only screen and (max-width: 1430px) {
+  .container {
+    width: 80%;
+  }
+
+  form {
+    width: 80%;
+    margin: 0 1em;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 553px) {
+  .items {
+  flex-direction: column;
+}
+ label.remember {
+padding: 1em 0;
+}
+
+@media screen and (max-width: 380px) {
   span.psw {
      display: block;
      float: none;

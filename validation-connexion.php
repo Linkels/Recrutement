@@ -2,20 +2,14 @@
 
 include ('connectBDD.php');
 
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$ulogin = $_POST['ulogin'];
-$motdepassec = $_POST['motdepassec'];
-$motdepassec_hash = PASSWORD_HASH($_POST['motdepassec'], PASSWORD_DEFAULT);
+$ulogin = isset($_POST['ulogin']) ? $_POST['ulogin'] : NULL;
+$motdepassec = isset($_POST['motdepassec']) ? $_POST['motdepassec'] : NULL;
 
-$sql = $bdd->prepare ("INSERT INTO utilisateur (nom, prenom, ulogin, motdepassec)
-    VALUES (:nom, :prenom, :ulogin, :motdepassec_hash)");
-$sql->execute(array(
-  'nom' => $nom,
-  'prenom' => $prenom,
-  'ulogin' => $ulogin,
-  'motdepassec_hash' => $motdepassec_hash
-));
+$sql = ("UPDATE utilisateur SET ulogin= '".$ulogin."', motdepassec= '".$motdepassec."' WHERE ulogin='".$_POST['ulogin']."' ");
+
+
+$resilta= $bdd->prepare($sql);
+$resilta->execute();
 
 // pour rediriger vers la bonne page en fonction du statut de l'utilisateur
 

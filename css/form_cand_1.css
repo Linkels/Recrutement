@@ -146,10 +146,25 @@ input[type="submit"]:active, button:active {
 }
 
 /*////////////////////////////////////////
-\\\\\\\\\\\\\\\\\\\_pour l'astéisque*/
+\\\\\\\\\\\\\\\\\\\_pour l'astérisque*/
 
 .float-none {
   text-align: center;
   padding: 1em;
   font-style: italic;
+}
+
+/*////////////////////////////////////////
+\\\\\\\\\\\\\\\\\\\media query*/
+
+@media only screen and (max-width: 1030px) {
+  fieldset {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 726px) {
+  fieldset {
+    padding: 1em;
+  }
 }

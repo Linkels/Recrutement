@@ -89,4 +89,16 @@ footer .column2 {
     color: crimson;
 }
 
-/* Footer */
+/* media query */
+
+@media only screen and (max-width: 499px) {
+  .link-foot {
+    font-size: 0.8em;
+  }
+  footer img {
+      padding: 2em 2em 1em 0em;
+  }
+  footer figcaption {
+    padding-left: 0;
+  }
+}

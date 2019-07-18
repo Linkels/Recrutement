@@ -321,17 +321,17 @@ color: white;
   .text-bloc2 {
     font-size: 1em;
   }
-}
-
-@media only screen and (max-width: 1265px) {
   .text-bloc3 {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
-
-  .titre-bloc2 {
-    font-size: 1.6em;
+  .btn-candidat a {
+    font-size: 1.8em;
   }
+    .titre-bloc2 {
+      font-size: 1.6em;
+    }
 }
+
 
 @media only screen and (max-width: 1199px) {
   #gp_blocs {

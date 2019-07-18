@@ -29,7 +29,7 @@
         <div class="items">
             <label class="remember">
       <input type="checkbox" checked="checked" name="remember">Se souvenir de moi
-    <button type="submit">Se connecter maintenant</button>
+    <button type="submit">Se connecter</button>
 
       <div class="inscription"><span>*</span> Déjà inscrit? <a href="connexion.php">Se connecter</a>
       </div>

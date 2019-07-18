@@ -4,13 +4,12 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/folio.css">
   <title>PORTEFOLIO</title>
 </head>
 
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=recrutement;charset=utf8', 'root', '');
+include 'connectBDD.php';
 $requete = "SELECT * FROM etudiant";
 $reponse = $bdd->query($requete);
 ?>
@@ -50,7 +49,6 @@ $reponse = $bdd->query($requete);
   </div>
 
 
-  <?php include "footer.php" ?>
 </body>
 
 </html>

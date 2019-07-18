@@ -344,7 +344,7 @@ a#cRetour.cVisible {
   margin-left: calc(50% - 20%);
 }
 
-/*//////////////////media query\\\\\\\\\\\\\\\\\*/
+/*//////////////////media query sur la modale\\\\\\\\\\\\\\\\\*/
 
 @media only screen and (max-width: 1485px) {
   .modal-dialog .modal-content {
@@ -364,4 +364,19 @@ a#cRetour.cVisible {
   #form-modal label {
     margin-left: 11em;
   }
+}
+
+/* Media query sur le tableau*/
+
+@media only screen and (max-width: 1449px) {
+  #tableau-gestion {
+    width: 80%;
+    transform: translate(12em,-10em);
+    empty-cells: hide;
+  }
+  #tableau-gestion td, #tableau-gestion th {
+    padding: 0.5em;
+  }
+  #tableau-gestion th {
+    font-size: 1em;
 }
