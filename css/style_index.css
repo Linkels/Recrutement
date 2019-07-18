@@ -227,7 +227,8 @@ color: white;
     box-shadow: 5px 5px 3px #666;
 }
 
-/* slider final  */
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<slider des partenaires*/
 
 @-webkit-keyframes scroll {
   0% {
@@ -256,9 +257,12 @@ color: white;
   background: white;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
   height: 100px;
-  margin: auto;
+  margin: 4em auto;
+  margin-bottom: 6em;
+  margin-left: calc(50% - 480px);
   overflow: hidden;
   position: relative;
+  bottom: -5em;
   width: 960px;
 }
 .slider::before, .slider::after {

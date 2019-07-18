@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simplon Charleville _ candidature</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" />
 
- <!-- link (DEBUT) BOOSTRAP 4.3.1 -->
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- link (FIN) BOOSTRAP 4.3.1 -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-<link rel="stylesheet" href="style/reset.css" >
-  <link rel="stylesheet" href="style/style.css" >
-  <link rel="stylesheet" href="style/form.css" >
+  <!--  pour le css natif -->
+  <link rel="stylesheet" href="css/header.css">
 
+  <link rel="stylesheet" href="css/style_index.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <?php include('headera.php'); ?>
+    <?php include('header.php'); ?>
     <div class="titre">- Connexion -</div>
     <div class="fonony">
       <form action="administration.php" method="POST">
@@ -34,28 +38,28 @@
           <input type="password" placeholder="Mot de passe .." name="psw" required>
         </div><br><br>
 
-          
+
           <!--
           <label>
             <input type="checkbox" checked="checked" name="remember"> Se souvenir de moi
           </label><br><br>
             -->
         </div>
-        
+
         <button type="submit" name="submit">Se connecter</button><br>
         <!---<div class="container" style="background-color:#f1f1f1">-->
         <div class="lamina">
               <!--<button type="button" class="cancelbtn">Annuler</button>-->
               <span class="psw"><a href="#">Mot de passe oublié !</a></span>
         </div>
-        
-        
-      </form> 
+
+
+      </form>
 </div>
 <br>
 
 
-<?php include('fotera.php'); ?>
+<?php include('footer.php'); ?>
 
 </body>
 </html>

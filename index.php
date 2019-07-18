@@ -27,7 +27,7 @@
 
   include 'connectBDD.php';
 
-    $sql = "SELECT * FROM infospromo";
+  $sql = "SELECT * FROM infospromo ORDER BY idip DESC LIMIT 1";
     foreach ($bdd->query($sql) as $row){
 }
   ?>
@@ -244,52 +244,54 @@
   </button>
 </div>
 
-<div class="slider">
-<div class="slide-track">
-<div class="slide">
-<img src="img/Partners/01.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/02.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/03.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/04.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/05.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/06.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/p_cci.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/01.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/02.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/03.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/04.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/05.jpg" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/06.png" height="100" width="250" alt="" />
-</div>
-<div class="slide">
-<img src="img/Partners/p_cci.png" height="100" width="250" alt="" />
-</div>
-</div>
-</div>
+<!--  pour le slider des partenaires  -->
+
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide">
+          <img src="img/Partners/01.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/02.jpg" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/03.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/04.jpg" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/05.jpg" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/06.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/p_cci.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/01.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/02.jpg" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/03.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/04.jpg" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/05.jpg" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/06.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="img/Partners/p_cci.png" height="100" width="250" alt="" />
+        </div>
+      </div>
+    </div>
 
   <!--pour inclure le footer-->
   <?php

@@ -30,7 +30,7 @@
 
   include 'connectBDD.php';
 
-  $sql = "SELECT * FROM infospromo";
+  $sql = "SELECT * FROM infospromo ORDER BY idip DESC LIMIT 1";
  foreach ($bdd->query($sql) as $row){
 }
 
@@ -39,6 +39,7 @@
   <!---titre---->
 
   <div id="titre">
+
     <h1>Bienvenue au formulaire de candidature à la promo <?= $row['nompromo'];?> de SIMPL<span class="clr">O</span>N Charleville-Mézières
     </h1>
   </div>

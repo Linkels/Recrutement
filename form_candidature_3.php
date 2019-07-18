@@ -31,7 +31,7 @@
 
   include 'connectBDD.php';
 
-    $sql = "SELECT * FROM infospromo";
+  $sql = "SELECT * FROM infospromo ORDER BY idip DESC LIMIT 1";
     foreach ($bdd->query($sql) as $row){
 }
   ?>

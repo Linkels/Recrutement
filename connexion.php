@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Allocinemet</title>
+        <title>Connexion</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/connexion.css"/>
@@ -12,7 +12,7 @@
 
 <form method="post" action="">
       <fieldset class="float-left">
-        <legend>Etat Civil<span>*</span></legend>
+        <legend>Identifiez-vous ici</legend>
 
   <div class="container">
     <label for="uname"><b>Identifiant<span>*</span></b></label>
