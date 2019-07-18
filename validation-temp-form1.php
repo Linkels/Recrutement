@@ -36,11 +36,36 @@ $sql->execute(array(
   'liphoto' => $photo
 ));
 
+// File upload path
+$targetDir = "/img";
+$fileName = basename($_FILES["file"]["name"]);
+$targetFilePath = $targetDir . $fileName;
+$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+if(isset($_POST["envoyer"]) && !empty($_FILES["file"]["name"])){
+    // Allow certain file formats
+    $photo =  $_POST['liphoto'];
+
+    $allowTypes = array('jpg','png','jpeg','gif','pdf');
+    if(in_array($fileType, $allowTypes)){
+        echo "Anarana fichier : ".$_FILES["file"]["name"]."<br>";
+
+        // Upload file to server
+        if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+
+
+           $sql  = $bdd->prepare("INSERT INTO etudiant (photo)
+           VALUES ('".$photo."')");
+}}}
+           $sql->execute();
+
 $skl = $bdd->prepare('SELECT * FROM etudiant ORDER BY idhor DESC');
 $skl->execute();
 $res=$skl->fetch();
 
 $id=$res['idhor'];
+
+
 
 header('location:form_candidature_2.php?val='.$res['idhor']);
 ?>

@@ -68,40 +68,40 @@
           <legend> Etat Civil <span class="clr">*</span></legend>
 
             <label>Prénom</label><br/>
-            <input type="text" name="prenom" value="<?= $prenom;?>" maxlength="20" required><br/>
+            <input type="text" name="prenom" value="" maxlength="20" required><br/>
 
 
             <label>Nom</label><br/>
-            <input type="text" name="nom" value="<?= $nom;?>" maxlength="20" required><br/>
+            <input type="text" name="nom" value="" maxlength="20" required><br/>
 
 
             <label>Date de naissance</label><br/>
-            <input type="date" name="date_naissance" value="<?= $date_naissance;?>" required><br/>
+            <input type="date" name="date_naissance" value="" required><br/>
 
 
             <label>Adresse</label><br/>
-            <input type="text" name="adresse" value="<?= $adresse;?>" required><br/>
+            <input type="text" name="adresse" value="" required><br/>
 
 
             <label>Code postal</label><br/>
-          <input type="text" name="code_postal" value="<?= $code_postal;?>" required><br/>
+          <input type="text" name="code_postal" value="" required><br/>
 
 
             <label>Ville</label><br/>
-            <input type="text" name="ville" value="<?= $ville;?>" required><br/>
+            <input type="text" name="ville" value="" required><br/>
 
 
 
           <label>Nationalité</label><br/>
-          <input type="text" name="nationalite" value="<?= $nationalite;?>" required><br/>
+          <input type="text" name="nationalite" value="" required><br/>
 
 
           <label>Email</label><br/>
-          <input type="email" name="email" value="<?= $email;?>" required><br/>
+          <input type="email" name="email" value="" required><br/>
 
 
           <label>Numéro de téléphone où l'on peut vous joindre (format xx-xx-xx-xx)</label><br/>
-          <input type="tel" name="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" value="<?= $tel;?>" required><br/>
+          <input type="tel" name="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" value="" required><br/>
 
     </fieldset>
 
@@ -181,7 +181,7 @@
       <br/><br/>
 
       <label>Insérez ici votre photo</label><br/><br/>
-      <input type="file" name="photo" value="<?= $photo;?>" required><br/>
+      <input type="file" name="photo" value="" required><br/>
 
 
         <!--<input type="submit" value="Valider cette photo"><br/><br/>-->
