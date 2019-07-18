@@ -15,7 +15,7 @@
         <legend>Enregistrez-vous ici</legend>
 
   <div class="container">
-    <label for="nom"><b>Nom<</b></label>
+    <label for="nom"><b>Nom</b></label>
     <input type="text" placeholder="Nom d'utilisateur" name="nom" required>
 
     <label for="prenom"><b>Prénom</b></label>
