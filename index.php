@@ -240,7 +240,7 @@
 
 <div class="btn-flex">
   <button class="btn-candidat">
-    <a href="form_candidature_1.php"> Je candidate ! </a>
+    <a href="register.php"> Je candidate ! </a>
   </button>
 </div>
 
