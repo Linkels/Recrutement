@@ -31,22 +31,22 @@
   include 'connectBDD.php';
 
   $sql = "SELECT * FROM infospromo ORDER BY idip DESC LIMIT 1";
- foreach ($bdd->query($sql) as $row){
-}
-
+  $etudiant = $bdd->prepare($sql);
+  $etudiant->execute();
+ foreach ($etudiant as $row){
   ?>
 
   <!---titre---->
 
   <div id="titre">
+
     <h1>Bienvenue au formulaire de candidature à la promo <?= $row['nompromo'];?> de SIMPL<span class="clr">O</span>N Charleville-Mézières
     </h1>
   </div>
 
   <?php
-    $bdd=null;
+    }
   ?>
-
 <!--  Barre de progression -->
 
   <center><hr class="ligne-prog"></center>
@@ -69,7 +69,23 @@
       <legend>Motivation <span class="clr">*</span></legend>
 
         <label>Si vous étiez un super-héros / une super-héroïne, qui seriez-vous et pourquoi?</label><br/>
-        <textarea name="superheros" value="<?= $superheros;?>" rows="7" cols="100" required></textarea><br/>
+        <textarea name="superheros" value="<?= $superheros;?>" rows="7" cols="100" required></textarea><br/>  $sql = "SELECT * FROM infospromo ORDER BY idip DESC LIMIT 1";
+  $etudiant = $bdd->prepare($sql);
+  $etudiant->execute();
+ foreach ($etudiant as $row){
+  ?>
+
+  <!---titre---->
+
+  <div id="titre">
+
+    <h1>Bienvenue au formulaire de candidature à la promo <?= $row['nompromo'];?> de SIMPL<span class="clr">O</span>N Charleville-Mézières
+    </h1>
+  </div>
+
+  <?php
+    }
+  ?>
 
 
         <label>Racontez-nous un de vos "hacks" (pas forcément technique ou informatique):</label><br/>
@@ -100,9 +116,12 @@
       <p class="float-none"><span class="clr">* </span> Toutes les questions sont obligatoires, mais restent modifiables tant
         que vous ne validez pas votre formulaire à la dernière étape.</p>
 
-    <!--pour inclure le footer-->
-    <?php
+        <?php
+        // pour fermer la première requête sur table infospromo
 
+        $etudiant->closeCursor();
+
+      //pour inclure le footer
     include 'footer.php';
 
     ?>
