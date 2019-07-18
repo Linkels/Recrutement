@@ -25,7 +25,7 @@ while ($donnees = $reponse->fetch())
   <div>
     <div id="bloc_1" class="animated zoomInLeft">
       <h1 class="titre-bloc1">
-        <img src="<?php echo $donnees["liphoto"]; ?>" width="10%" alt="">
+        <img src="images/<?php echo $donnees["liphoto"]; ?>" width="10%" alt="">
       </h1>
       <center>
         <hr />
