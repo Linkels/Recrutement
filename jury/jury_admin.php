@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/jury.css">
+  <link rel="stylesheet" href="../css/jury.css">
   <title>JURY ADMIN</title>
 </head>
 
@@ -25,7 +25,7 @@ while ($donnees = $reponse->fetch())
   <div>
     <div id="bloc_1" class="animated zoomInLeft">
       <h1 class="titre-bloc1">
-        <img src="images/<?php echo $donnees["liphoto"]; ?>" width="10%" alt="">
+        <img src="../images/<?php echo $donnees["liphoto"]; ?>" width="10%" alt="">
       </h1>
       <center>
         <hr />

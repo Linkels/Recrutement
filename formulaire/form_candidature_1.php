@@ -5,9 +5,9 @@
   <title>Simplon Charleville _ candidature</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel="shortcut icon" href="../img/favicon.ico" />
 
-  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="../css/reset.css">
   <!--pour les icones de fontawesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <!--pour les animations de animate.css-->
@@ -16,19 +16,19 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   <!--  pour le css natif -->
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/form_cand_1.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/form_cand_1.css">
 </head>
 
 <body>
   <!--pour inclure le header-->
   <?php
 
-  include 'header.php';
+  include '../header.php';
 
 
-  include 'connectBDD.php';
+  include '../connectBDD.php';
 
   $sql = "SELECT * FROM infospromo ORDER BY idip DESC LIMIT 1";
   $etudiant = $bdd->prepare($sql);
@@ -202,12 +202,12 @@
     $etudiant->closeCursor();
 
   //pour inclure le footer
-    include 'footer.php';
+    include '../footer.php';
 
     ?>
 
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>

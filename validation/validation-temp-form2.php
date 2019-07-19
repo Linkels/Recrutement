@@ -17,5 +17,5 @@ $resilta= $bdd->prepare($sql);
 $resilta->execute();
 
 
-header('location:form_candidature_3.php?val='.$_POST['idd'])
+header('formulaire/location:form_candidature_3.php?val='.$_POST['idd'])
 ?>

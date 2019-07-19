@@ -33,5 +33,5 @@ $sql->execute(array(
 ));
 
 
-header('location:admin-validation.php');
+header('formulaire/location:admin-validation.php');
 ?>

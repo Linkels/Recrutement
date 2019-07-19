@@ -11,5 +11,5 @@ $sql = ("UPDATE utilisateur SET ulogin= '".$ulogin."', motdepassec= '".$motdepas
 $resilta= $bdd->prepare($sql);
 $resilta->execute();
 
-header('location:form_candidature_1.php');
+header('location:formulaire/form_candidature_1.php');
 ?>

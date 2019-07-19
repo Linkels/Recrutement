@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/formu_fin.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="../css/formu_fin.css">
+  <link rel="stylesheet" href="../css/footer.css">
   <title></title>
 </head>
 
 <body>
-  <?php include "header.php" ?>
+  <?php include "../header.php" ?>
 
   <center><hr class="ligne-prog"></center>
   <div id="progress-bar">
@@ -34,7 +34,7 @@
       <center>
         <div class="bouton">
           <p>
-            <a href="index.php">Retour accueil</a>
+            <a href="../index.php">Retour accueil</a>
           </p>
         </div>
       </center>
@@ -42,7 +42,7 @@
 
 
 
-  <?php include "footer.php" ?>
+  <?php include "../footer.php" ?>
 </body>
 
 </html>

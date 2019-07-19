@@ -4,18 +4,18 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/formu_fin.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="../css/formu_fin.css">
+  <link rel="stylesheet" href="../css/footer.css">
   <title></title>
 </head>
 
 <body>
   <?php
 
-  include 'header.php';
+  include '../header.php';
 
 
-  include 'connectBDD.php';
+  include '../connectBDD.php';
 
   ?>
   <center><hr class="ligne-prog"></center>
@@ -42,7 +42,7 @@
         <a href="#">Retour arrière</a>
         </p>
       </div>
-      <form id="form" action="validation-temp-valider.php" method="POST">
+      <form id="form" action="../validation/validation-temp-valider.php" method="POST">
 
       <input type="checkbox" name="valider" class="checkbox"
       <?php if (isset($valider) && $valider=="oui") echo "checked";?> value="oui">Oui<br/>
@@ -58,7 +58,7 @@
 
   <?php
 
-  include 'footer.php';
+  include '../footer.php';
 
   ?>
 </body>

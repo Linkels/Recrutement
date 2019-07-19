@@ -3,7 +3,7 @@
   <input type="checkbox" id="nav-check">
   <div class="nav-header">
     <div class="nav-title">
-      <img src="img/logo.png" width="35%" alt="">
+      <img src="logo.png" width="35%" alt="">
     </div>
   </div>
   <div class="nav-btn">
@@ -15,6 +15,6 @@
   </div>
 
   <div class="nav-links">
-    <a href="connexion.php">Compte</a>
+    <a href="connexion/connexion.php">Compte</a>
   </div>
 </div>

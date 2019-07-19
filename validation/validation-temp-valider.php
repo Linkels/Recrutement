@@ -14,5 +14,5 @@ $resilta->execute();
 
 
 
-header('location:formu_valider.php?val='.$_POST['idb'])
+header('formulaire/location:formu_valider.php?val='.$_POST['idb'])
 ?>

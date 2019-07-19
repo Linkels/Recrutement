@@ -18,6 +18,6 @@ $sql->execute(array(
 ));
 
 
-header('location:form_candidature_1.php');
+header('formulaire/location:form_candidature_1.php');
 
 ?>
