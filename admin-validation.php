@@ -8,23 +8,23 @@ session_start();
   <title>Simplon Charleville _ administration</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../img/favicon.ico" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
 
-  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <!--  pour le css natif -->
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
   <!--pour inclure le header-->
   <?php
 
-  include '../header.php';
+  include 'header.php';
 ?>
 
     <!-- début du main -->

@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/jury.css">
-  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="css/jury.css">
+  <link rel="stylesheet" href="css/footer.css">
   <title>JURY MOTIVATION</title>
 </head>
 
@@ -86,7 +86,7 @@
         </div>
           <div class="bouton">
             <p>
-              <a href="../index.php">Valider</a>
+              <a href="index.php">Valider</a>
             </p>
           </div>
         </ul>

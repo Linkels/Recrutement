@@ -67,5 +67,5 @@ $id=$res['idhor'];
 
 
 
-header('formulaire/location:form_candidature_2.php?val='.$res['idhor']);
+header('location:form_candidature_2.php?val='.$res['idhor']);
 ?>

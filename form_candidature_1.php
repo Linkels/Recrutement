@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
+{
+
+  ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,9 +12,9 @@
   <title>Simplon Charleville _ candidature</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../img/favicon.ico" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
 
-  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="css/reset.css">
   <!--pour les icones de fontawesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <!--pour les animations de animate.css-->
@@ -16,37 +23,46 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   <!--  pour le css natif -->
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/footer.css">
-  <link rel="stylesheet" href="../css/form_cand_1.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/form_cand_1.css">
 </head>
 
 <body>
   <!--pour inclure le header-->
   <?php
 
-  include '../header.php';
+  include 'header.php';
 
-
-  include '../connectBDD.php';
-
-  $sql = "SELECT * FROM infospromo ORDER BY idip DESC LIMIT 1";
-  $etudiant = $bdd->prepare($sql);
-  $etudiant->execute();
- foreach ($etudiant as $row){
-  ?>
+?>
 
   <!---titre---->
 
   <div id="titre">
 
-    <h1>Bienvenue au formulaire de candidature à la promo <?= $row['nompromo'];?> de SIMPL<span class="clr">O</span>N Charleville-Mézières
+    <h1>Bienvenue au formulaire de candidature à la promo de SIMPL<span class="clr">O</span>N Charleville-Mézières
     </h1>
-  </div>
+    <form method="post" action="logout.php">
+      <button type="submit">Se déconnecter <?php
+                      if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
+                      {
+                          echo $_SESSION['pseudo_etudiant'];
+                      } ?>
+      </button>
+    </form>
 
+  </div>
   <?php
-    }
-  ?>
+    include ('connectBDD.php');
+
+    $req = $bdd->prepare("SELECT * FROM etudiant WHERE id_etudiant = :id_etudiant");
+    $req->execute(array(
+        'id_etudiant' => $_SESSION['id_etudiant']));
+    $resultat = $req->fetch();
+
+    ?>
+
+
 
   <!---time-line---->
 
@@ -68,11 +84,11 @@
           <legend> Etat Civil <span class="clr">*</span></legend>
 
             <label>Prénom</label><br/>
-            <input type="text" name="prenom" value="" maxlength="20" required><br/>
+            <input type="text" name="prenom" value="<?php echo $resultat['prenom_etudiant']; ?>" maxlength="20" required><br/>
 
 
             <label>Nom</label><br/>
-            <input type="text" name="nom" value="" maxlength="20" required><br/>
+            <input type="text" name="nom" value="<?php echo $resultat['nom_etudiant']; ?>" maxlength="20" required><br/>
 
 
             <label>Date de naissance</label><br/>
@@ -80,11 +96,11 @@
 
 
             <label>Adresse</label><br/>
-            <input type="text" name="adresse" value="" required><br/>
+            <input type="text" name="adresse" value="<?php echo $resultat['adresse_etudiant']; ?>" required><br/>
 
 
             <label>Code postal</label><br/>
-          <input type="text" name="code_postal" value="" required><br/>
+          <input type="text" name="code_postal" value="<?php echo $resultat['codepostal_etudiant']; ?>" required><br/>
 
 
             <label>Ville</label><br/>
@@ -197,17 +213,18 @@
         que vous ne validez pas votre formulaire à la dernière étape.</p>
 
     <?php
-    // pour fermer la première requête sur table infospromo
-
-    $etudiant->closeCursor();
-
   //pour inclure le footer
-    include '../footer.php';
+    include 'footer.php';
 
     ?>
 
 
-  <script src="../js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
+<?php
+}
+else {
+  echo " il y a un soucis, vous n'êtes pas connecté, merci de vous reconnecter à cette page : <a href='../connexion/connexion.php'> en cliquant ici </a>";
+}

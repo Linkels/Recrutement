@@ -4,15 +4,15 @@
         <title>Registration</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/connexion.css"/>
+        <link rel="stylesheet" href="css/connexion.css"/>
 
 </head>
 <body>
-  <?php include "../header.php" ?>
+  <?php include "header.php" ?>
 
-<form method="POST" action="../validation/validation-registration.php">
+<form method="POST" action="validation-registration.php">
       <fieldset class="float-left">
-        <legend>Enregistrez-vous ici</legend>
+        <legend>Enregistrez-vous ici pour accéder à votre compte</legend>
 
   <div class="container">
     <label for="nom"><b>Nom</b></label>

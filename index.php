@@ -23,15 +23,7 @@
   <?php
 
   include 'header.php';
-
-
-  include 'connectBDD.php';
-
-  $sql = "SELECT * FROM infospromo ORDER BY idip DESC LIMIT 1";
-    foreach ($bdd->query($sql) as $row){
-}
-  ?>
-
+?>
 <!--début du contenu "main"-->
   <div id="main">
 
@@ -41,38 +33,29 @@
         <!--pour le premier bloc rouge à gauche-->
         <div id="bloc_1" class="animated zoomInLeft">
             <h1 class="titre-bloc1">
-              Promo <?= $row['nompromo'];?>
+              Promo >
             </h1>
             <h3 class="titre-inter-bloc1">
               Date ultime pour candidater:
             </h3>
             <h4 class="date-bloc1">
-              <?php
-                $newDate = date("d/m/Y", strtotime($row['datecandidature']));
-                echo $newDate;
-              ?>
+              01/01/2020
             </h4>
             <center><hr/></center>
             <h3 class="titre-inter-bloc1 deux">
               Date de la formation:
             </h3>
             <h4 class="date-bloc1">
-              Du
-              <?php
-                $newDate = date("d/m/Y", strtotime($row['datedebutpromo']));
-                echo $newDate;
-              ?> au
-              <?php
-                $newDate = date("d/m/Y", strtotime($row['datefinpromo']));
-                echo $newDate;
-              ?>
+              Du 01/02/2020
+               au
+              31/10/2020
             </h4>
         </div>
 
         <!-- pour le deuxième bloc blanc à droite-->
         <div id="bloc_2" class="animated fadeInRight">
           <h1 class="titre-bloc2">
-            Bienvenue au formulaire pour poser votre candidature à la promo <?= $row['nompromo'];?>
+            Bienvenue au formulaire pour poser votre candidature à la promo
           </h1>
           <p class="text-bloc2">Vous vous apprêtez à candidater à la formation Développeur·se Web
             de Simplon Charleville-Mézières - labellisée Grande Ecole du Numérique - qui se déroulera
@@ -233,9 +216,6 @@
     </div>
 </div>
 
-<?php
-  $bdd=null;
-?>
 <!--  pour le bouton de candidature  -->
 
 <div class="btn-flex">
