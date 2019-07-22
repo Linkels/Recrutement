@@ -16,9 +16,35 @@ $mail_etudiant = $_POST['mail_etudiant'];
           $resultat = $req->fetch();
           $req-> closeCursor();
           if (strtolower($pseudo_etudiant) == strtolower($resultat['pseudo_etudiant']))
-           {
-               echo " Ce nom d'utilisateur est déjà utilisé. <br>";
-               echo " <a href='../register.php'> Merci d'utiliser un autre pseudo ! </a>";
+           { ?>
+             <!DOCTYPE html>
+             <html>
+                 <head>
+                     <title>Connexion</title>
+                     <meta charset="utf-8" />
+                     <meta name="viewport" content="width=device-width, initial-scale=1">
+                     <link rel="stylesheet" href="../css/reset.css"/>
+                     <link rel="stylesheet" href="../css/connexion.css"/>
+
+             </head>
+             <body>
+               <?php
+
+               include "../include/header.php";
+
+               ?>
+                 <section>
+                   <p class="message">
+                     Ce nom d'utilisateur est déjà utilisé. Choisissez-en un autre svp:
+                   </p>
+
+               <a href='../register.php'>
+                 <button  class="btn-transit">Nouvel essai</button>
+               </a>
+             </body>
+             </html>
+
+               <?php
            }
            else {
              $req = $bdd->prepare("SELECT mail_etudiant FROM etudiant WHERE mail_etudiant = :mail_etudiant");
@@ -27,9 +53,34 @@ $mail_etudiant = $_POST['mail_etudiant'];
              $resultat = $req->fetch();
              $req-> closeCursor();
              if (strtolower($mail_etudiant) == strtolower($resultat['mail_etudiant']))
-              {
-                  echo " Ce mail est déjà utilisé. <br>";
-                  echo " <a href='../register.php'> Merci d'utiliser un autre mail ! </a>";
+              { ?>
+                <!DOCTYPE html>
+                <html>
+                    <head>
+                        <title>Connexion</title>
+                        <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <link rel="stylesheet" href="../css/reset.css"/>
+                        <link rel="stylesheet" href="../css/connexion.css"/>
+
+                </head>
+                <body>
+                  <?php
+
+                  include "../include/header.php";
+
+                  ?>
+                    <section>
+                      <p class="message">
+                        Ce mail est déjà utilisé. Choisissez-en un autre svp:
+                      </p>
+
+                  <a href='../register.php'>
+                    <button  class="btn-transit">Nouvel essai</button>
+                  </a>
+                </body>
+                </html>
+              <?php
               }
               else{
 

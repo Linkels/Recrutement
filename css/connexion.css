@@ -37,7 +37,7 @@ b {
 }
 
 button {
-    background-color: crimson;
+    background-color: #da183b;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -79,11 +79,11 @@ button:hover {
 }
 
 .psw a:hover {
-    color: crimson;
+    color: #da183b;
 }
 
 span{
-    color: crimson;
+    color: #da183b;
 }
 
 .inscription{
@@ -94,7 +94,7 @@ span{
 }
 
 .inscription a{
-    color: crimson;
+    color: #da183b;
 }
 
 /*  style pour pages de transit*/

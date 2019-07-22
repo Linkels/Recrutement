@@ -15,8 +15,34 @@ $isPasswordCorrect = password_verify($_POST['mdp_etudiant'], $resultat['mdp_etud
 
 if (!$resultat)
 {
-    echo "J'ai rien reçu, j'ai un pb";
+  ?>
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <title>Connexion</title>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="../css/reset.css"/>
+          <link rel="stylesheet" href="../css/connexion.css"/>
 
+  </head>
+  <body>
+    <?php
+
+    include "../include/header.php";
+
+    ?>
+      <section>
+        <p class="message">
+          Oups, pas de réception...C'est un problème
+        </p>
+
+    <a href='../connexion.php'>
+      <button  class="btn-transit">Je me connecte</button>
+    </a>
+  </body>
+  </html>
+<?php
 }
 else{
 
@@ -27,8 +53,34 @@ else{
       header('location:done-or-not.php');
   }
   else {
-      echo 'Mauvais identifiant ou mot de passe !';
-      echo '<a href="../connexion.php">cliquer ici à nouveau pour tenter de se connecter !</a>';
+    ?>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Connexion</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="../css/reset.css"/>
+            <link rel="stylesheet" href="../css/connexion.css"/>
+
+    </head>
+    <body>
+      <?php
+
+      include "../include/header.php";
+
+      ?>
+        <section>
+          <p class="message">
+            Mauvais identifiant ou mot de passe !
+          </p>
+
+      <a href='../connexion.php'>
+        <button  class="btn-transit">Je me connecte</button>
+      </a>
+    </body>
+    </html>
+<?php
   }
 }
 

@@ -13,11 +13,63 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
   ));
   $sql-> closeCursor();
 
+  ?>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Connexion</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="../css/reset.css"/>
+            <link rel="stylesheet" href="../css/connexion.css"/>
 
-  echo "<a href='../form_candidature_1.php'> Vous pouvez à nouveau modifier votre formulaire, merci de cliquer ici</a>";
+    </head>
+    <body>
+      <?php
 
+      include "../include/header.php";
+
+      ?>
+        <section>
+          <p class="message">
+            Vous pouvez à nouveau modifier votre formulaire.
+          </p>
+
+      <a href='../form_candidature_1.php'>
+        <button  class="btn-transit">Cliquez ici</button>
+      </a>
+    </body>
+    </html>
+  <?php
 
 }
 else {
-  echo " il y a un soucis, vous n'êtes pas connecté, merci de vous reconnecter à cette page : <a href='connexion.php'> en cliquant ici </a>";
+  ?>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Connexion</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="../css/reset.css"/>
+            <link rel="stylesheet" href="../css/connexion.css"/>
+
+    </head>
+    <body>
+      <?php
+
+      include "../include/header.php";
+
+      ?>
+        <section>
+          <p class="message">
+            Vous n'êtes pas connecté, pour recommencer:
+          </p>
+
+      <a href='../connexion.php'>
+        <button  class="btn-transit">Nouvel essai</button>
+      </a>
+    </body>
+    </html>
+  <?php
 }

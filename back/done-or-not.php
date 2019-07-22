@@ -18,7 +18,34 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
          header('location:../form_candidature_1.php');
        }
        else {
-        echo "bon la il y a un problème car c'est pas 0 ou 1" ;
+         ?>
+         <!DOCTYPE html>
+         <html>
+             <head>
+                 <title>Connexion</title>
+                 <meta charset="utf-8" />
+                 <meta name="viewport" content="width=device-width, initial-scale=1">
+                 <link rel="stylesheet" href="../css/reset.css"/>
+                 <link rel="stylesheet" href="../css/connexion.css"/>
+
+         </head>
+         <body>
+           <?php
+
+           include "include/header.php";
+
+           ?>
+             <section>
+               <p class="message">
+                 Oups, on a un problème de validation de formulaire...On recommence:
+               </p>
+
+           <a href='connexion.php'>
+             <button  class="btn-transit">Je me connecte</button>
+           </a>
+         </body>
+         </html>
+<?php
       }
     }
 }
