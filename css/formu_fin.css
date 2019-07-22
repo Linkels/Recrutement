@@ -1,3 +1,60 @@
+* {
+  margin: 0;
+  padding: 0:inherit;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* bar */
+#progress-bar {
+  display: flex;
+  justify-content: space-around;
+  transform: translateY(-2em);
+  z-index: 1;
+}
+
+hr {
+  margin: 2em auto;
+  border: 0.2em solid black;
+  width: 80%;
+}
+
+.cercle {
+  width: 1em;
+  height: 1em;
+  font-size: 2em;
+  border-radius: 50%;
+  border: 0.1em solid black;
+  text-align: center;
+  background-color: white;
+  padding-bottom: 0.1em;
+  transform: translateY(-1em);
+}
+
+.etape-1 {
+  background-color: black;
+  color: white;
+  font-weight: normal;
+  transform: translateY(-1.5em);
+}
+
+.etape-d {
+  transform: translateY(-2em);
+
+}
+
+.bgd {
+  background-color: white;
+}
+
+/* style pour Récapitulatif formulaire*/
 
 #bloc_1 {
   background-color: white;
@@ -8,7 +65,6 @@
   padding-top: 1em;
   max-width: 60em;
   margin: 5vh auto;
-
 }
 
 .titre-bloc1 {
@@ -28,7 +84,7 @@
   border: 0.1em solid black;
 }
 
-.bouton a {
+/*.bouton a {
 display:block;
 width:200px;
 line-height:50px;
@@ -45,40 +101,9 @@ background-color: #da183b;
 .bouton a:hover {
 background-color: black;
 color: white;
-}
+}*/
 
-/* bar */
-#progress-bar {
-  display: flex;
-  justify-content: space-around;
-  transform: translateY(-1.5em);
-  z-index: 1;
-}
-
-hr {
-  margin-top: 5em;
-  border: 0.2em solid black;
-  width: 80%;
-}
-
-.cercle {
-  width: 1em;
-  height: 1em;
-  font-size: 2em;
-  border-radius: 50%;
-  border: 0.1em solid black;
-  text-align: center;
-  background-color: white;
-  padding-bottom: 0.1em;
-}
-
-.etape-1 {
-  background-color: black;
-  color: white;
-  font-weight: bold;
-}
-
-.bgd {
-  background-color: white;
-  transform: translateY(-0.2em);
+input.btn-valid {
+  padding: 1em;
+  width: 400px;
 }

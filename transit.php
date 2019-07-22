@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-// Suppression des variables de session et de la session
-$_SESSION = array();
-session_destroy();
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,11 +16,11 @@ session_destroy();
   ?>
     <section>
       <p class="message">
-        Vous êtes maintenant déconnecté - Vous pouvez revenir sur la page d'accueil en cliquant ici :
+        Votre compte a bien été créé, commencer votre inscription en vous connectant !
       </p>
 
-  <a href='index.php'>
-    <button  class="btn-transit">Retour à la page d'accueil</button>
+  <a href='connexion.php'>
+    <button  class="btn-transit">Je me connecte</button>
   </a>
 </body>
 </html>

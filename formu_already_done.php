@@ -19,9 +19,9 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/formu_fin.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/formu_fin.css">
 
 
   <title></title>
@@ -47,8 +47,8 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
       <table id="tableau-gestion" >
         <caption>Récapitulatif du formulaire</caption>
             <br><tr>
-              <th>Question</th>
-              <th style="background:black;">Réponse du Candidat</th>
+              <th>Questions</th>
+              <th style="background:black;">Réponses du Candidat</th>
             </tr>
             <tr>
               <td>Prénom</td>
@@ -143,7 +143,7 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
 
 
             <tr>
-              <td>Lien Sololean</td>
+              <td>Lien Sololearn</td>
               <td><?php echo $resultat['sololearn_etudiant']; ?></td>
             </tr>
 
@@ -153,7 +153,7 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
             </tr>
 
             <tr>
-              <td>Autre Plateforme ou site que vous avez déjà réalisés !</td>
+              <td>Autre Plateforme ou site que vous avez déjà réalisé(s) !</td>
               <td><?php echo $resultat['autreplateforme_etudiant']; ?></td>
             </tr>
 
@@ -173,7 +173,7 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
 
       <form id="form" action="back/validation-reset-valider.php" method="POST">
 
-      <input type="submit" name="submit" value="  Vous souhaitez modifier vos informations ?  &nbsp;&nbsp;">
+      <input class="btn-valid" type="submit" name="submit" value="  Souhaitez-vous modifier vos informations ? ">
 
 </form>
 

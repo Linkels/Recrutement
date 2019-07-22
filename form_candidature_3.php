@@ -24,8 +24,8 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
 
   <!--  pour le css natif -->
   <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/form_cand_1.css">
+  <link rel="stylesheet" href="css/footer.css">
 
 </head>
 
@@ -95,7 +95,7 @@ $req-> closeCursor();
     </fieldset>
 
     <center>
-      <button><a href="bakck/form_candidature_2.php">Revenir aux questions précédentes</a></button>
+      <button><a href="form_candidature_2.php">Revenir aux questions précédentes</a></button>
       <input type="submit" name="submit" value="Passez à la validation de votre inscription">
     </center>
   </form>

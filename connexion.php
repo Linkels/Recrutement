@@ -22,9 +22,6 @@
     <label for="motdepassec"><b>Mot de passe<span>*</span></b></label>
     <input type="password" placeholder="Mot de passe" name="mdp_etudiant" required>
         <div class="items">
-            <label class="remember">
-              <input type="checkbox" checked="checked" name="remember">Se souvenir de moi
-            </label>
           <div class="psw">
             <a href="register.php">Mot de passe oublié?</a>
           </div>

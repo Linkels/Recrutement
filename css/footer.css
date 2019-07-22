@@ -21,8 +21,7 @@ footer .row {
 
 footer figure {
     display: table-row;
-    width: 150px;
-    padding:
+    width: 160px;
 }
 
 footer img {
@@ -31,9 +30,9 @@ footer img {
 
 footer figcaption {
     color: #fff;
-    font-size: 15px;
-    font-weight: lighter;
-    padding-left: 1.5em;
+    font-size: 1em;
+    font-weight: normal;
+    padding-left: 1.3em;
 }
 
 footer .column1 {
@@ -46,7 +45,7 @@ footer .column1 {
 footer .column2 {
     display: table-row;
     color: #fff;
-    font-weight: lighter;
+    font-weight: normal;
     padding: 2.9rem 0;
 }
 

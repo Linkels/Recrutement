@@ -1,4 +1,7 @@
+
+
 <footer class="page-footer">
+  <link rel="stylesheet" href="css/footer.css">
 
   <div class="container-foot">
         <div class="row">

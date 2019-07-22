@@ -12,7 +12,7 @@
 
 <form method="POST" action="back/validation-registration.php">
       <fieldset class="float-left">
-        <legend>Enregistrez-vous ici pour acceder à votre </legend>
+        <legend>Inscrivez-vous ici  </legend>
 
   <div class="container">
     <label for="nom"><b>Nom</b></label>

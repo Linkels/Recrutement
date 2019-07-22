@@ -44,7 +44,7 @@ $mail_etudiant = $_POST['mail_etudiant'];
                     'inscriptionvalide_etudiant' => 1
                   ));
                   $sql-> closeCursor();
-                  header('location:../test.php');
+                  header('location:../transit.php');
               }
           }
 

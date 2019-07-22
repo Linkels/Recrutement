@@ -92,7 +92,7 @@ $req-> closeCursor();
     </fieldset>
 
       <center>
-        <button><a href="bakck/form_candidature_1.php">Revenir aux questions précédentes</a></button>
+        <button><a href="form_candidature_1.php">Revenir aux questions précédentes</a></button>
         <input type="submit" name="submit" value="Passez aux questions suivantes">
       </center>
 

@@ -11,7 +11,6 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
     $req-> closeCursor();
     if ($resultat)
     {
-       echo $resultat['inscriptionvalide_etudiant'];
        if ($resultat['inscriptionvalide_etudiant'] == 0){
          header('location:../formu_already_done.php');
        }
