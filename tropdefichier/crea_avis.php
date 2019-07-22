@@ -1,14 +1,14 @@
 
  <?php
-   require "connectBDD.php";
-   $avis = isset($_POST['avis']) ? $_POST['avis'] : NULL;
-   $note = isset($_POST['note']) ? $_POST['note'] : NULL;
+   include '../include/connectBDD.php';
+   $Avis_Admin = isset($_POST['Avis_Admin']) ? $_POST['Avis_Admin'] : NULL;
+   $Note_Admin = isset($_POST['Note_Admin']) ? $_POST['Note_Admin'] : NULL;
 
-   $req = $bdd->prepare('INSERT INTO jury_admin(avis, note)
+   $req = $bdd->prepare('INSERT INTO etudiant(Avis_Admin, Note_Admin)
      VALUES(:avis, :note)');
    $req->execute(array(
-     'avis' => $avis,
-     'note' => $note
+     'Avis_Admin' => $Avis_Admin,
+     'Note_Admin' => $Note_Admin
    ));
    header('Location: jury_admin.php');
  ?>

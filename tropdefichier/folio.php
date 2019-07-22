@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/folio.css">
-  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="/Recrutement/css/folio.css">
+  <link rel="stylesheet" href="/Recrutement/css/header.css">
   <title>PORTEFOLIO</title>
 </head>
 
@@ -31,7 +31,7 @@ $reponse = $bdd->query($requete);
             {
               ?>
 
-  <a href="jury_admin.php?id=<?php echo $donnees["id_etudiant"];?>">
+  <a href="jury.php?id=<?php echo $donnees["id_etudiant"];?>">
     <div class="card">
       <div class="card_image">
         <img src="<?php echo $donnees["photo_etudiant"]; ?>" /> </div>
