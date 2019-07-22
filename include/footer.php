@@ -3,7 +3,7 @@
   <div class="container-foot">
         <div class="row">
             <figure class="img-foot">
-                <center><img src="img/logo/scm_logo_rond_lg.png" alt="logo" /></center>
+                <center><img src="/Recrutement/img/logo/scm_logo_rond_lg.png" alt="logo" /></center>
                 <figcaption>"In Code We Trust"</figcaption>
             </figure>
 
