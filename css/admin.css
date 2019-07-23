@@ -9,7 +9,7 @@ body {
   border: 3px solid black;
   margin: 1em 1em 2em 1em;
   padding: 0.5em;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
 }
 
@@ -249,14 +249,14 @@ a#cRetour.cVisible {
 .modal-dialog .modal-content {
   margin: auto;
   background-color: #f3f3f3;
-  position
-  : relative;
+  position: relative;
   padding: 0;
   outline: 0;
   border: 1px #777 solid;
   text-align: justify;
   width: 40%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 r  vertical-align: middle;
+gba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   /* Add animation */
   -webkit-animation-name: example; /* Chrome, Safari, Opera */
@@ -309,7 +309,7 @@ a#cRetour.cVisible {
   margin-left: 10em;
 }
 
-#form-modal input {
+#form-modal input, #form-page input {
   width: 2em;
   height: 2.5em;
   border: 1px solid gray;
@@ -325,6 +325,7 @@ a#cRetour.cVisible {
 .cnt {
   transform: translateX(30%);
 }
+
 
 /*//////////////////page de validation\\\\\\\\\\\\\\\\\*/
 

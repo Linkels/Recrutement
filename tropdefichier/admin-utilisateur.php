@@ -16,18 +16,18 @@ session_start();
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <!--  pour le css natif -->
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body id="haut">
   <!--pour inclure le header-->
   <?php
 
-  include 'include/header.php';
+  include '../include/header.php';
 
 
-  include 'include/connectBDD.php';
+  include '../include/connectBDD.php';
 
 
 
@@ -56,7 +56,7 @@ session_start();
 <!--début formulaire sessions-->
 
 <?php
-
+  $sql = "SELECT * FROM user";
 ?>
 
   <table id="tableau-gestion" >
@@ -73,19 +73,21 @@ session_start();
         </tr>
         <tr>
           <?php
+          foreach ($bdd->query($sql) as $donnees) {
+            $i++;
              ?>
-          <td><?= $donnees['iduser'];?></td>
-          <td><?= $donnees['nom'];?></td>
-          <td><?= $donnees['prenom'];?></td>
-          <td><?= $donnees['ulogin'];?></td>
-          <td><?= $donnees['mail'];?></td>
-          <td><a href="#idjury"><i class="fas fa-user-edit fa-lg"><?php $id02= $donnees['iduser'];?></i></a></td>
+          <td><?= $donnees['id_user'];?></td>
+          <td><?= $donnees['nom_user'];?></td>
+          <td><?= $donnees['prenom_user'];?></td>
+          <td><?= $donnees['pseudo_user'];?></td>
+          <td><?= $donnees['mail_user'];?></td>
+          <td><a href="droits-jury.php?id=<?= $donnees['id_user'];?>"><i class="fas fa-user-edit fa-lg"></i></a></td>
           <td><a href="#idadmin"><i class="fas fa-user-edit fa-lg"></i></a></td>
           <td><a href="#idsupp"><i class="fas fa-trash-restore fa-lg"></i></a></td>
         </tr>
         <?php
-        /*
-        $sql->closeCursor;*/
+        }
+        $sql->closeCursor;
         ?>
 
   </table>

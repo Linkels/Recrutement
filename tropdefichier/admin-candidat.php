@@ -8,26 +8,26 @@ session_start();
   <title>Simplon Charleville _ administration</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel="shortcut icon" href="../img/favicon.ico" />
 
-  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <!--  pour le css natif -->
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body id="haut">
   <!--pour inclure le header-->
   <?php
 
-  include 'include/header.php';
+  include '../include/header.php';
 
 
-  include 'include/connectBDD.php';
+  include '../include/connectBDD.php';
 
 
   ?>
@@ -42,13 +42,20 @@ session_start();
       <h1>Bienvenue à la gestion des candidats
       </h1>
     </div>
+    <?php
+       $sql = "SELECT * FROM etudiant";
+       foreach ($bdd->query($sql) as $donnees) {
+         $i++;
+           }
+          ?>
 
 
-
-    <aside> Nombre de candidats inscrits: <span class="bold"></span></aside>
+    <aside> Nombre de candidats inscrits: <span class="bold"><?= $i;?></span></aside>
     <?php
 
-    ?>
+   $sql->closeCursor;
+   ?>
+
 
 <!--début menu gestion-->
   <div class="vertical-menu">
@@ -61,6 +68,9 @@ session_start();
 
 <!--début tableau Utilisateurs-->
 
+<?php
+  $sql = "SELECT * FROM etudiant";
+?>
 
 
   <table id="tableau-gestion" >
@@ -77,18 +87,24 @@ session_start();
         </tr>
         <tr>
 
-          <td></td>
-              <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          <?php
+          foreach ($bdd->query($sql) as $donnees) {
+            $i++;
+             ?>
+          <td><?= $donnees['nom_etudiant'];?></td>
+          <td><?= $donnees['prenom_etudiant'];?></td>
+          <td><?= $donnees['dateinscription_etudiant'];?></td>
+          <td><a href="admin-detail.php?id=<?= $donnees['id_etudiant'];?>" ><i class="fas fa-info-circle fa-lg"></i></a></td>
+          <td><a href="#idval1"><i class="fas fa-check-square fa-lg"></i></a></td>
+          <td><a href="#idsession"><i class="fas fa-list-ol fa-lg"></i></a></td>
+          <td><?= $row['moynote'];?></td>
+          <td><a href="#idval2"><i class="fas fa-check-circle fa-2x bgd"></i></a></td>
         </tr>
-
+        <?php
+        }
+        $sql->closeCursor;
+        ?>
   </table>
-    <aside> Nombre de candidats inscrits: <span class="bold"></span></aside>
 
   <!--début fenêtres modales-->
 

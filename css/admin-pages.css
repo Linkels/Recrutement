@@ -1,0 +1,74 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+/*//////////////////pages de modification à la place des modales\\\\\\\\\\\\\\\\\*/
+
+
+.page-content .container {
+  background-color: black;
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  max-height: 0.8em;
+  padding-top: 0.2em;
+}
+.page-content {
+  margin: 2em auto;
+  background-color: #f3f3f3;
+  border: 1px #777 solid;
+  text-align: justify;
+  width: 60%;
+  height: 23em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container label {
+  color: black;
+  font-size: 0.7em;
+  text-align: left;
+}
+
+.cnt-page {
+  color: black;
+  font-size: 0.6em;
+  text-align: left;
+  margin-left: 40%;
+}
+
+input.radio {
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  margin: 0.5em 0.2em;
+}
+
+/*>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<mise en place des submits*/
+
+input[type="submit"] {
+  width: 7em;
+  background-color: #da183b;
+  color: white;
+  font-size: 0.7em;
+  font-weight: bold;
+  border-radius: 0.7em;
+  margin-top: 2em;
+  height: 2em;
+  border: none;
+  cursor: pointer;
+}
+
+
+input[type="submit"]:hover {
+  background-color: black;
+  box-shadow: 5px 10px 6px #999;
+}
+
+input[type="submit"]:active {
+  transform: translateY(0.2em);
+  box-shadow: 5px 5px 3px #666;
+}

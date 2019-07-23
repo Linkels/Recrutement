@@ -74,40 +74,40 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
           <legend> Etat Civil <span class="clr">*</span></legend>
 
             <label>Prénom</label><br/>
-            <input type="text" name="prenom_etudiant" value="<?php echo $resultat['prenom_etudiant']; ?>" maxlength="20" ><br/>
+            <input type="text" name="prenom_etudiant" value="<?= $resultat['prenom_etudiant']; ?>" maxlength="20" ><br/>
 
 
             <label>Nom</label><br/>
-            <input type="text" name="nom_etudiant" value="<?php echo $resultat['nom_etudiant']; ?>" maxlength="20" ><br/>
+            <input type="text" name="nom_etudiant" value="<?= $resultat['nom_etudiant']; ?>" maxlength="20" ><br/>
 
 
             <label>Date de naissance</label><br/>
-            <input type="date" name="datenaissance_etudiant" value="<?php echo $resultat['datenaissance_etudiant']; ?>" ><br/>
+            <input type="date" name="datenaissance_etudiant" value="<?= $resultat['datenaissance_etudiant']; ?>" ><br/>
 
 
             <label>Adresse</label><br/>
-            <input type="text" name="adresse_etudiant" value="<?php echo $resultat['adresse_etudiant']; ?>" ><br/>
+            <input type="text" name="adresse_etudiant" value="<?= $resultat['adresse_etudiant']; ?>" ><br/>
 
 
             <label>Code postal</label><br/>
-          <input type="text" name="codepostal_etudiant" value="<?php echo $resultat['codepostal_etudiant']; ?>" ><br/>
+          <input type="text" name="codepostal_etudiant" value="<?= $resultat['codepostal_etudiant']; ?>" ><br/>
 
 
             <label>Ville</label><br/>
-            <input type="text" name="ville_etudiant" value="<?php echo $resultat['ville_etudiant']; ?>" ><br/>
+            <input type="text" name="ville_etudiant" value="<?= $resultat['ville_etudiant']; ?>" ><br/>
 
 
 
           <label>Nationalité</label><br/>
-          <input type="text" name="nationalite_etudiant" value="<?php echo $resultat['nationalite_etudiant']; ?>" ><br/>
+          <input type="text" name="nationalite_etudiant" value="<?= $resultat['nationalite_etudiant']; ?>" ><br/>
 
 
           <label>Email</label><br/>
-          <input type="email" name="mail_etudiant" value="<?php echo $resultat['mail_etudiant']; ?>" ><br/>
+          <input type="email" name="mail_etudiant" value="<?= $resultat['mail_etudiant']; ?>" ><br/>
 
 
           <label>Numéro de téléphone où l'on peut vous joindre (format xx-xx-xx-xx)</label><br/>
-          <input type="tel" name="telephone_etudiant" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" value="<?php echo $resultat['telephone_etudiant']; ?>" ><br/>
+          <input type="tel" name="telephone_etudiant" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" value="<?= $resultat['telephone_etudiant']; ?>" ><br/>
 
     </fieldset>
 

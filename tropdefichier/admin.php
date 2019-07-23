@@ -1,20 +1,20 @@
 <?php
 session_start();
-include ('back/connectBDD.php');
+include ('../include/connectBDD.php');
 
-    $_SESSION['uname'] = $_POST['uname'];
+    $_SESSION['pseudo_user'] = $_POST['pseudo_user'];
 
-    $sql = $bdd->prepare('SELECT * FROM utilisateur WHERE ulogin = :pseudo');
+    $sql = $bdd->prepare('SELECT * FROM user WHERE pseudo_user = :pseudo_user');
 
      $sql->execute(array(
-         'pseudo' => $_POST['uname']));
+         'pseudo_user' => $_POST['pseudo_user']));
 
     if($resul = $sql->fetch()){
-    $isPasswordCorrect = password_verify($_POST['psw'], $resul['motdepassec']);
+    $isPasswordCorrect = password_verify($_POST['mdp_user'], $resul['mdp_user']);
 
 
-        $_SESSION['nom'] = $resul['nom'];
-        $_SESSION['prenom'] = $resul['prenom'];
+        $_SESSION['nom_user'] = $resul['nom_user'];
+        $_SESSION['prenom_user'] = $resul['prenom_user'];
 
 }?>
 <!DOCTYPE html>
@@ -31,16 +31,16 @@ include ('back/connectBDD.php');
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   <!--  pour le css natif -->
-  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="../css/header.css">
 
-  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
   <!--pour inclure le header-->
   <?php
 
-  include 'include/header.php';
+  include '../include/header.php';
 
 
   ?>

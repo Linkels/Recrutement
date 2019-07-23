@@ -8,31 +8,25 @@ session_start();
   <title>Simplon Charleville _ administration</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel="shortcut icon" href="../img/favicon.ico" />
 
-  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <!--  pour le css natif -->
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body id="haut">
   <!--pour inclure le header-->
   <?php
 
-  include 'include/header.php';
+  include '../include/header.php';
 
-  include 'include/connectBDD.php';
-
-  $sql = $bdd->prepare("SELECT * FROM utilisateur");
-  $sql->execute();
-
-  $resultat = $sql->fetch();
-
+  include '../include/connectBDD.php';
   ?>
 
 <!--début du contenu "main"-->
@@ -44,12 +38,11 @@ session_start();
     <div id="titre">
       <h1>Bienvenue <?= $_SESSION['prenom']." ".strtoupper($_SESSION['nom']);?> au détail du formulaire de candidature de
         <?php
-        $scl = $bdd->prepare("SELECT * FROM etudiant WHERE idhor =".$_GET['vab']);
-        $scl->execute();
+        $current_id=$_GET['id'];
+        $req=$bdd->query("SELECT * from etudiant WHERE id_etudiant= '".$current_id."'");
+        $res=$req->fetch();
 
-        $result = $scl->fetch();
-
-        echo $result['prenom'];?>
+        echo $res['prenom_etudiant'].' '.strtoupper($res['nom_etudiant']);?>
       </h1>
     </div>
 
@@ -58,7 +51,7 @@ session_start();
     <a href="admin-utilisateur.php">Utilisateurs</a>
     <a href="admin-candidat.php">Candidats</a>
     <a href="admin-session.php">Sessions</a>
-    <a href="admin-infospromo.php">Infos Promo</a>
+    <!--<a href="admin-infospromo.php">Infos Promo</a>-->
     <a href="#deconnexion">Déconnexion</a>
   </div>
 
@@ -69,70 +62,70 @@ session_start();
       <legend> Etat Civil </legend>
 
         <label>Prénom</label><br/>
-        <input type="text" name="prenom" value="<?= $result['prenom'];?>" readonly ><br/>
+        <input type="text" name="prenom" value="<?= $res['prenom_etudiant'];?>" readonly ><br/>
 
 
         <label>Nom</label><br/>
-        <input type="text" name="nom" value="<?= $result['nom'];?>" readonly><br/>
+        <input type="text" name="nom" value="<?= $res['nom_etudiant'];?>" readonly><br/>
 
 
         <label>Date de naissance</label><br/>
-        <input type="date" name="date_naissance" value="<?= $result['datenai'];?>" readonly><br/>
+        <input type="date" name="date_naissance" value="<?= $res['datenaissance_etudiant'];?>" readonly><br/>
 
 
         <label>Adresse</label><br/>
-        <input type="text" name="adresse" value="<?= $result['adresse_perso'];?>" readonly><br/>
+        <input type="text" name="adresse" value="<?= $res['adresse_etudiant'];?>" readonly><br/>
 
 
         <label>Code postal</label><br/>
-        <input type="text" name="code_postal" value="<?= $result['codep'];?>" readonly><br/>
+        <input type="text" name="code_postal" value="<?= $res['codepostal_etudiant'];?>" readonly><br/>
 
 
         <label>Ville</label><br/>
-        <input type="text" name="ville" value="<?= $result['ville'];?>" readonly><br/>
+        <input type="text" name="ville" value="<?= $res['ville_etudiant'];?>" readonly><br/>
 
         <label>Nationalité</label><br/>
-        <input type="text" name="nationalite" value="<?= $result['nationalite'];?>" readonly><br/>
+        <input type="text" name="nationalite" value="<?= $res['nationalite_etudiant'];?>" readonly><br/>
 
 
         <label>Email</label><br/>
-        <input type="email" name="email" value="<?= $result['email'];?>" readonly><br/>
+        <input type="email" name="email" value="<?= $res['mail_etudiant'];?>" readonly><br/>
 
 
         <label>N° de téléphone</label><br/>
-        <input type="tel" name="tel" value="<?= $result['numtels'];?>" readonly><br/>
+        <input type="tel" name="tel" value="<?= $res['telephone_etudiant'];?>" readonly><br/>
       </fieldset>
 
       <fieldset>
         <legend>Statut</legend>
 
         <label>Statut actuel</label><br/>
-        <input type="text" name="satut" value="<?= $result['situactu'];?>" readonly><br/>
+        <input type="text" name="satut" value="<?= $res['statut_etudiant'];?>" readonly><br/>
 
         <label>Dernier diplôme obtenu</label><br/>
-        <input type="text" name="diplome" value="<?= $result['lastdipl'];?>" readonly><br/>
+        <input type="text" name="diplome" value="<?= $res['diplome_etudiant'];?>" readonly><br/>
 
         <label>Disponibilité dès la pré-rentrée? </label><br/>
-        <input type="text" name="disponib" value="<?= $result['disponib'];?>" readonly><br/>
+        <input type="text" name="disponib" value="<?= $res['disponibilite_etudiant'];?>" readonly><br/>
       </fieldset>
 
       <fieldset>
         <legend>Motivation</legend>
 
           <label>Quel super-héros et pourquoi?</label><br/>
-          <input type="text" name="superheros" value="<?= $result['superheros'];?>" readonly><br/>
+          <input type="text" name="superheros" value="<?= $res['qhero_etudiant'];?>" readonly><br/>
 
           <label>Ses "hacks":</label><br/>
-          <input type="text" name="hacks" value="<?= $result['hacks'];?>" readonly><br/>
+          <input type="text" name="hacks" value="<?= $res['qhack_etudiant'];?>" readonly><br/>
 
           <label>Pourquoi intégrer la formation?</label><br/>
-          <input type="text" name="intformat" value="<?= $result['intformat'];?>" readonly><br/>
+          <input type="text" name="intformat" value="<?= $res['qformation_etudiant'];?>" readonly><br/>
 
           <label>Sa motivation:</label><br/>
-          <input type="text" name="motivation" value="<?= $result['motivation'];?>" readonly><br/>
+          <input type="text" name="motivation" value="<?= $res['qparcours_etudiant'];?>" readonly><br/>
 
           <label>Son avenir dans un an:</label><br/>
-          <input type="text" name="dansunan" value="<?= $result['dansunan'];?>" readonly><br/>
+          <input type="text" name="dansunan" value="<?= $res['qpouvoir_etudiant'];?>" readonly><br/>
 
       </fieldset>
 
@@ -140,19 +133,19 @@ session_start();
         <legend> Pré-requis</legend>
 
           <label>Pré-requis #1 : PHP - Lessons Sololearn:</label><br/>
-          <input type="text" name="prerequis1" value="<?= $result['prerequis1'];?>" readonly><br/>
+          <input type="text" name="prerequis1" value="<?= $res['sololearn_etudiant'];?>" readonly><br/>
 
 
           <label>Pré-requis #2 : HTML et CSS - Badges Codecademy:</label><br/>
-          <input type="text" name="prerequis2" value="<?= $result['prerequis2'];?>" readonly><br/>
+          <input type="text" name="prerequis2" value="<?= $res['codeacademy_etudiant'];?>" readonly><br/>
 
 
           <label>Profils supplémentaires sur d'autres plate-formes:</label><br/>
-          <input type="text" name="profilsuppl" value="<?= $result['profilsuppl'];?>" readonly><br/>
+          <input type="text" name="profilsuppl" value="<?= $res['autreplateforme_etudiant'];?>" readonly><br/>
 
 
           <label>Niveau d'anglais:</label><br/>
-          <input type="text" name="nivangl" value="<?= $result['langlais'];?>" readonly><br/>
+          <input type="text" name="nivangl" value="<?= $res['anglais_etudiant'];?>" readonly><br/>
 
         </fieldset>
 
