@@ -1,14 +1,13 @@
-
  <?php
-   include '../include/connectBDD.php';
-   $Avis_Admin = isset($_POST['Avis_Admin']) ? $_POST['Avis_Admin'] : NULL;
-   $Note_Admin = isset($_POST['Note_Admin']) ? $_POST['Note_Admin'] : NULL;
+ require "../include/connectBDD.php";
+   $$note = isset($_POST['note']) ? $_POST['note'] : NULL;
+   $id_etudiant = isset($_POST['id_etudiant']) ? $_POST['id_etudiant'] : NULL;
 
-   $req = $bdd->prepare('INSERT INTO etudiant(Avis_Admin, Note_Admin)
-     VALUES(:avis, :note)');
+   $req = $bdd->prepare('INSERT INTO note(note, id_etudiant)
+     VALUES(:note, :id_etudiant)');
    $req->execute(array(
-     'Avis_Admin' => $Avis_Admin,
-     'Note_Admin' => $Note_Admin
+     'note' => $note,
+     'id_etudiant' => $id_etudiant
    ));
-   header('Location: jury_admin.php');
+   header('Location: folio.php');
  ?>
