@@ -31,7 +31,7 @@
     <!-- Jury Admin -->
     <div id="bloc_1" class="animated zoomInLeft">
       <h1 class="titre-bloc1">
-        <img src="<?php echo $donnees["photo_etudiant"]; ?>" alt="">
+        <img src="../back/<?php echo $donnees["photo_etudiant"]; ?>" width="50%" alt="">
       </h1>
       <center>
         <hr />
@@ -103,9 +103,7 @@
         <ul>
           <form class="fake" action="crea_avis.php" method="post">
             <center>
-              <input type="hidden" name="id_etudiant" value="<?php echo $id_etudiant; ?>">
-              <input type="hidden" name="id_user" value="<?php echo $id_user; ?>">
-              <input type="text" name="avis_admin" placeholder="avis_admin">
+              <input type="text" name="note" placeholder="note">
               <div class="slidecontainer" style="width: 500px;">
                 <p class="zero">0</p>
                 <p class="other" style="padding-left: 48px;">-1</p>

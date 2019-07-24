@@ -34,7 +34,7 @@ $reponse = $bdd->query($requete);
   <a href="jury.php?id=<?php echo $donnees["id_etudiant"];?>">
     <div class="card">
       <div class="card_image">
-        <img src="<?php echo $donnees["photo_etudiant"]; ?>" /> </div>
+        <img src="../back/<?php echo $donnees["photo_etudiant"]; ?>" /> </div>
       <div class="card_title">
         <p><?php echo $donnees["nom_etudiant"]; ?> <?php echo $donnees["prenom_etudiant"]; ?></p>
       </div>
