@@ -94,7 +94,7 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
 
 
             <label>Ville</label><br/>
-            <input type="text" name="ville_etudiant" value="<?= $resultat['ville_etudiant']; ?>" ><br/>enctype="multipart/form-data"
+            <input type="text" name="ville_etudiant" value="<?= $resultat['ville_etudiant']; ?>" ><br/>
 
 
 
@@ -106,7 +106,7 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
           <input type="email" name="mail_etudiant" value="<?= $resultat['mail_etudiant']; ?>" ><br/>
 
 
-          <label>Numéro de téléphone où l'on peut vous joindre (format xx-xenctype="multipart/form-data"x-xx-xx)</label><br/>
+          <label>Numéro de téléphone où l'on peut vous joindre (format xx-xx-xx-xx)</label><br/>
           <input type="tel" name="telephone_etudiant" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" value="<?= $resultat['telephone_etudiant']; ?>" ><br/>
 
     </fieldset>
@@ -154,7 +154,7 @@ if (isset($_SESSION['id_etudiant']) AND isset($_SESSION['pseudo_etudiant']))
       <?php if (isset($resultat['diplome_etudiant']) && $resultat['diplome_etudiant']=="brevet") echo "checked";?> value="brevet">Diplôme National du Brevet (brevet des collèges)<br/>
 
       <input type="radio" name="diplome_etudiant" class="radio"
-      <?php if (isset($resultat['diplome_etudiant']) && $resultat['diplome_etudiant']=="CAP") echo "checked";?> value="CAP">CAP<br/>enctype="multipart/form-data"
+      <?php if (isset($resultat['diplome_etudiant']) && $resultat['diplome_etudiant']=="CAP") echo "checked";?> value="CAP">CAP<br/>
 
       <input type="radio" name="diplome_etudiant" class="radio"
       <?php if (isset($resultat['diplome_etudiant']) && $resultat['diplome_etudiant']=="BEP") echo "checked";?> value="BEP">BEP<br/>
