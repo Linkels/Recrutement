@@ -204,14 +204,14 @@ else {
             <title>Connexion</title>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="../css/reset.css"/>
-            <link rel="stylesheet" href="../css/connexion.css"/>
+            <link rel="stylesheet" href="css/reset.css"/>
+            <link rel="stylesheet" href="css/connexion.css"/>
 
     </head>
     <body>
       <?php
 
-      include "../include/header.php";
+      include "include/header.php";
 
       ?>
         <section>
@@ -219,7 +219,7 @@ else {
             Vous n'êtes pas connecté, pour recommencer:
           </p>
 
-      <a href='../connexion.php'>
+      <a href='connexion.php'>
         <button  class="btn-transit">Nouvel essai</button>
       </a>
     </body>
